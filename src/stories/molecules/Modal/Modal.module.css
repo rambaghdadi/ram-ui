@@ -1,0 +1,43 @@
+.visible {
+  pointer-events: all;
+  visibility: visible;
+  opacity: 1;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-400%, -50%); */
+  translate: -50% -50%;
+  scale: 0;
+  min-width: var(--w-64);
+  max-width: var(--w-64);
+  min-height: 10rem;
+  border-radius: var(--rounded);
+  background-color: var(--bg-white);
+
+  padding: var(--p-4);
+  transition: all 0.3s;
+}
+
+@media (min-width: 640px) {
+  .container {
+    min-width: var(--w-96);
+  }
+}
+
+.container.visible {
+  scale: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--m-5);
+}
+
+.header p {
+  font-weight: 600;
+  font-size: var(--text-xl);
+}

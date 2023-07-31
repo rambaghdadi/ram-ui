@@ -1,0 +1,32 @@
+.button {
+  all: unset;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  background-color: var(--bg-white);
+  border: 1px solid var(--bg-gray-300);
+
+  border-radius: var(--rounded);
+
+  text-align: center;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: translate 0.2s;
+}
+
+.button:hover {
+  background-color: var(--bg-gray-100);
+}
+
+.button:active {
+  translate: 0 2px;
+}
+
+.button:focus {
+  outline: 1px solid rgb(148, 174, 230);
+}

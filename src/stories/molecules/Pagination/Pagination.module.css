@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: var(--gap-2);
+  align-items: center;
+}
+
+.active {
+  color: var(--bg-white) !important;
+  background-color: var(--background-color) !important;
+}
