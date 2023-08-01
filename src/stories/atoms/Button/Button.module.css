@@ -6,6 +6,8 @@
   color: var(--font-color);
   border-radius: var(--rounded);
 
+  text-align: center;
+
   font-weight: 500;
   cursor: pointer;
 
