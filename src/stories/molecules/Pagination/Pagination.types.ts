@@ -7,25 +7,25 @@ export const colors = {
 
 type Color = keyof typeof colors
 
+const commonMobileSizes = {
+  padding: "var(--p-2)",
+  fontSize: "var(--text-sm)",
+  width: "var(--w-1)",
+  height: "var(--w-1)",
+}
+
 export const sizes = {
   mobile: {
     sm: {
-      padding: "var(--p-1)",
-      fontSize: "var(--text-sm)",
-      width: "var(--w-1)",
-      height: "var(--w-1)",
+      ...commonMobileSizes,
     },
     md: {
-      padding: "var(--p-2)",
+      ...commonMobileSizes,
       fontSize: "var(--text-base)",
-      width: "var(--w-1)",
-      height: "var(--w-1)",
     },
     lg: {
-      padding: "var(--p-2)",
-      fontSize: "var(--text-base)",
-      width: "var(--w-1)",
-      height: "var(--w-1)",
+      ...commonMobileSizes,
+      fontSize: "var(--text-lg)",
     },
   },
   tablet: {

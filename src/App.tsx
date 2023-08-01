@@ -3,20 +3,14 @@ import Button from "./stories/atoms/Button/Button"
 import Modal from "./stories/molecules/Modal/Modal"
 import Notification from "./stories/atoms/Notification/Notification"
 import Pagination from "./stories/molecules/Pagination/Pagination"
+import Flex from "./stories/layout/Flex/Flex"
 
 function App() {
   const [page, setPage] = useState(1)
   const [show, setShow] = useState(false)
   const [notification, setNotification] = useState(false)
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-      }}
-    >
+    <div>
       <Modal
         isBlured
         withHeader
@@ -27,14 +21,6 @@ function App() {
       >
         Hi!
       </Modal>
-      {/* <Button onClick={() => setNotification(true)}>Notification!</Button>
-      <Button onClick={() => setShow(true)}>Modal!</Button> */}
-      <Pagination
-        size="md"
-        activePage={page}
-        totalPages={15}
-        onPageChange={setPage}
-      />
       <Notification
         color="success"
         isVisible={notification}
@@ -43,6 +29,16 @@ function App() {
         position={{top: "5%", right: "5px"}}
         onXClick={() => setNotification(false)}
       />
+      <Flex>
+        <Button onClick={() => setNotification(true)}>Notification!</Button>
+        <Button onClick={() => setShow(true)}>Modal!</Button>
+        <Pagination
+          size="md"
+          activePage={page}
+          totalPages={15}
+          onPageChange={setPage}
+        />
+      </Flex>
     </div>
   )
 }
