@@ -8,27 +8,69 @@ export const colors = {
 type Color = keyof typeof colors
 
 export const sizes = {
-  sm: {
-    padding: "var(--p-2)",
-    fontSize: "var(--text-sm)",
-    width: "var(--w-1)",
-    height: "var(--w-1)",
+  mobile: {
+    sm: {
+      padding: "var(--p-1)",
+      fontSize: "var(--text-sm)",
+      width: "var(--w-1)",
+      height: "var(--w-1)",
+    },
+    md: {
+      padding: "var(--p-2)",
+      fontSize: "var(--text-base)",
+      width: "var(--w-1)",
+      height: "var(--w-1)",
+    },
+    lg: {
+      padding: "var(--p-2)",
+      fontSize: "var(--text-base)",
+      width: "var(--w-1)",
+      height: "var(--w-1)",
+    },
   },
-  md: {
-    padding: "var(--p-3)",
-    fontSize: "var(--text-base)",
-    width: "var(--w-2)",
-    height: "var(--w-2)",
+  tablet: {
+    sm: {
+      padding: "var(--p-2)",
+      fontSize: "var(--text-sm)",
+      width: "var(--w-1)",
+      height: "var(--w-1)",
+    },
+    md: {
+      padding: "var(--p-3)",
+      fontSize: "var(--text-base)",
+      width: "var(--w-2)",
+      height: "var(--w-2)",
+    },
+    lg: {
+      padding: "var(--p-4)",
+      fontSize: "var(--text-lg)",
+      width: "var(--w-3)",
+      height: "var(--w-3)",
+    },
   },
-  lg: {
-    padding: "var(--p-4)",
-    fontSize: "var(--text-lg)",
-    width: "var(--w-3)",
-    height: "var(--w-3)",
+  desktop: {
+    sm: {
+      padding: "var(--p-2)",
+      fontSize: "var(--text-sm)",
+      width: "var(--w-1)",
+      height: "var(--w-1)",
+    },
+    md: {
+      padding: "var(--p-3)",
+      fontSize: "var(--text-base)",
+      width: "var(--w-2)",
+      height: "var(--w-2)",
+    },
+    lg: {
+      padding: "var(--p-4)",
+      fontSize: "var(--text-lg)",
+      width: "var(--w-3)",
+      height: "var(--w-3)",
+    },
   },
 } as const
 
-type Size = keyof typeof sizes
+type Size = keyof typeof sizes.desktop
 
 export interface IPaginationProps extends HTMLAttributes<HTMLDivElement> {
   color?: Color

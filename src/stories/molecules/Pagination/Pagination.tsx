@@ -1,3 +1,4 @@
+import useMediaQuery from "../../../hooks/useMediaQuery"
 import classes from "./Pagination.module.css"
 import {IPaginationProps, colors, sizes} from "./Pagination.types"
 import PageButton from "./components/PageButton/PageButton"
@@ -14,17 +15,17 @@ export default function Pagination({
   onPageChange,
   style,
 }: IPaginationProps) {
+  const device = useMediaQuery()
+
   const styles = {
-    //Color
     "--background-color": colors[color],
   }
 
   const buttonStyles = {
-    //Size
-    padding: sizes[size].padding,
-    minWidth: sizes[size].width,
-    height: sizes[size].height,
-    fontSize: sizes[size].fontSize,
+    padding: sizes[device][size].padding,
+    minWidth: sizes[device][size].width,
+    height: sizes[device][size].height,
+    fontSize: sizes[device][size].fontSize,
   }
 
   return (

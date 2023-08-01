@@ -1,4 +1,4 @@
-import Backdrop from "../../atoms/Backdrop/Backdrop"
+import Backdrop from "./Components/Backdrop/Backdrop"
 import X from "./SVGs/X"
 import classes from "./Modal.module.css"
 import {IModalProps} from "./Modal.types"

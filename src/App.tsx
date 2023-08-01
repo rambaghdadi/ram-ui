@@ -27,9 +27,14 @@ function App() {
       >
         Hi!
       </Modal>
-      <Button onClick={() => setNotification(true)}>Notification!</Button>
-      <Button onClick={() => setShow(true)}>Modal!</Button>
-      <Pagination activePage={page} totalPages={15} onPageChange={setPage} />
+      {/* <Button onClick={() => setNotification(true)}>Notification!</Button>
+      <Button onClick={() => setShow(true)}>Modal!</Button> */}
+      <Pagination
+        size="md"
+        activePage={page}
+        totalPages={15}
+        onPageChange={setPage}
+      />
       <Notification
         color="success"
         isVisible={notification}
