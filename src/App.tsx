@@ -44,3 +44,41 @@ function App() {
 }
 
 export default App
+
+//Feedback
+//TODO Progress
+
+//Typography
+//TODO Text
+//TODO Title
+//TODO Table
+
+//Display
+//TODO Carousel
+//TODO Accordion
+//TODO Timeline
+//TODO Drawer
+//TODO Tooltip
+//TODO Popover
+
+//INPUTS
+//TODO Autocomplete
+//TODO Checkbox
+//TODO Chip
+//TODO Color Input
+//TODO Color Picker
+//TODO File Input / Dropzone
+//TODO Multi Select
+//TODO Select Input
+//TODO Slider Input
+//TODO Basic Input
+//TODO Number Input
+//TODO Text Input
+//TODO Text Area Input
+//TODO Password Input
+//TODO Pin Input
+//TODO Radio Input
+//TODO Rating Input
+//TODO Switch Input
+//TODO Segmented Control Input
+//TODO Calendar
