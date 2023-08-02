@@ -62,6 +62,7 @@ export default App
 //TODO Popover
 
 //INPUTS
+//TODO Segmented Control Input
 //TODO Autocomplete
 //TODO Checkbox
 //TODO Chip
@@ -80,5 +81,4 @@ export default App
 //TODO Radio Input
 //TODO Rating Input
 //TODO Switch Input
-//TODO Segmented Control Input
 //TODO Calendar
