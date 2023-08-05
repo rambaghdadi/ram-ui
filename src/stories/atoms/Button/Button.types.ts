@@ -54,7 +54,7 @@ export const sizes = {
 
 type Size = keyof typeof sizes
 type Color = keyof typeof colors
-type Variant = "filled" | "outline" | "light"
+type Variant = keyof typeof colors.blue
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode

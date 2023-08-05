@@ -1,0 +1,33 @@
+.tooltip {
+  background-color: var(--bg-white);
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow-lg);
+  padding: var(--p-2);
+  position: fixed;
+
+  width: max-content;
+  max-width: var(--w-64);
+
+  transition: all 0.2s;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.tooltip.visible::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Adjust as needed */
+  left: 50%;
+  margin-left: -5px; /* Half of the width */
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--bg-gray-400) transparent transparent transparent;
+}
