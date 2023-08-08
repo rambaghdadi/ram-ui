@@ -29,11 +29,17 @@ export default function Pagination({
   }
 
   return (
-    <div style={{...styles, ...style}} className={`${classes.container}`}>
+    <div
+      style={{...styles, ...style}}
+      className={`${classes.container}`}
+      aria-label="Page navigation"
+    >
       <PageButton
         style={buttonStyles}
         disabled={activePage === 1}
         onClick={() => onPageChange(1)}
+        aria-label="Go to the first page"
+        aria-aria-disabled={activePage === 1}
       >
         <PaginationLeftArrow />
       </PageButton>
@@ -41,6 +47,7 @@ export default function Pagination({
         style={buttonStyles}
         onClick={() => onPageChange(1)}
         className={1 === activePage ? classes.active : ""}
+        aria-current={1 === activePage ? "page" : undefined}
       >
         {1}
       </PageButton>
@@ -54,6 +61,7 @@ export default function Pagination({
               onClick={() => onPageChange(i + 1)}
               key={i}
               className={i + 1 === activePage ? classes.active : ""}
+              aria-current={i + 1 === activePage ? "page" : undefined}
             >
               {i + 1}
             </PageButton>
@@ -68,6 +76,7 @@ export default function Pagination({
         style={buttonStyles}
         onClick={() => onPageChange(totalPages)}
         className={totalPages === activePage ? classes.active : ""}
+        aria-current={totalPages === activePage ? "page" : undefined}
       >
         {totalPages}
       </PageButton>
@@ -75,6 +84,8 @@ export default function Pagination({
         style={buttonStyles}
         disabled={activePage === totalPages}
         onClick={() => onPageChange(totalPages)}
+        aria-label="Go to the last page"
+        aria-disabled={activePage === totalPages}
       >
         <PaginationRightArrow />
       </PageButton>

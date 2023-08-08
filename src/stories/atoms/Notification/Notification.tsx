@@ -23,13 +23,19 @@ export default function Notification({
     <div
       style={{...styles, ...style, ...position}}
       className={`${classes.container} ${visible}`}
+      role="alert"
+      aria-live="polite"
     >
       <div className={classes.color}></div>
       <div className={classes.text}>
         <p className={classes.title}>{title}</p>
         {message && <p className={classes.message}>{message}</p>}
       </div>
-      <X onClick={onXClick} />
+      <X
+        onClick={onXClick}
+        aria-role="button"
+        aria-label="Close notification"
+      />
     </div>
   )
 }

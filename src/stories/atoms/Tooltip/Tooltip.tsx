@@ -1,48 +1,99 @@
 import classes from "./Tooltip.module.css"
 import {createPortal} from "react-dom"
-import {ITooltipProps, Placement} from "./Tooltip.types"
-import {CSSProperties, useEffect, useRef, useState} from "react"
-import useElementPosition from "../../../hooks/useElementPosition"
+import {ITooltipProps} from "./Tooltip.types"
+import {useEffect, useState} from "react"
+import {usePopper} from "react-popper"
 
-export default function Tooltip({children, label}: ITooltipProps) {
+const virtualReference = {
+  getBoundingClientRect: generateBoundingClientRect(),
+}
+
+export function generateBoundingClientRect(x = 0, y = 0): () => DOMRect {
+  return () => ({
+    width: 0,
+    height: 0,
+    top: y,
+    right: x,
+    bottom: y,
+    left: x,
+    x: 0,
+    y: 0,
+    toJSON: () => null,
+  })
+}
+
+export default function Tooltip({
+  children,
+  label,
+  isActive = false,
+  visibleOnHover = true,
+  followMouse = false,
+}: ITooltipProps) {
   const [isHovered, setIsHovered] = useState(false)
-  const [placement, setPlacement] = useState<Placement>("top")
-  const tooltipParentRef = useRef<HTMLDivElement>(null)
-  const tooltipRef = useRef<HTMLDivElement>(null)
+  const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
+    null
+  )
+  const [popperElement, setPopperElement] = useState<HTMLElement | null>(null)
+  const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null)
 
-  const parentPostion = useElementPosition(tooltipParentRef)
-  const tooltipPosition = useElementPosition(tooltipRef)
+  const {styles, attributes, update} = usePopper(
+    followMouse ? virtualReference : referenceElement,
+    popperElement,
+    {
+      placement: "top",
+      modifiers: [
+        {name: "arrow", options: {element: arrowElement}},
+        {
+          name: "offset",
+          options: {
+            offset: [0, 15],
+          },
+        },
+      ],
+    }
+  )
 
-  if (tooltipPosition.top < 0) console.log("hello")
+  useEffect(() => {
+    function updatePosition(e: MouseEvent) {
+      let x = e.clientX
+      let y = e.clientY
 
-  const visible = isHovered ? classes.visible : ""
+      virtualReference.getBoundingClientRect = generateBoundingClientRect(x, y)
+      update?.()
+    }
 
-  const styles: CSSProperties = {
-    top:
-      parentPostion.top - parentPostion.height - tooltipPosition.height + "px",
-    left:
-      parentPostion.left -
-      Math.floor(tooltipPosition.width / 2) +
-      Math.floor(parentPostion.width / 2) +
-      "px",
-  }
+    referenceElement?.addEventListener("mousemove", updatePosition)
+
+    return () =>
+      referenceElement?.removeEventListener("mousemove", updatePosition)
+  }, [referenceElement, update])
 
   return (
     <div
+      ref={setReferenceElement}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      ref={tooltipParentRef}
     >
-      {createPortal(
-        <div
-          ref={tooltipRef}
-          style={styles}
-          className={`${classes.tooltip} ${visible}`}
-        >
-          {label}
-        </div>,
-        document.body
-      )}
+      {((visibleOnHover && isHovered) || isActive) &&
+        createPortal(
+          <div
+            ref={setPopperElement}
+            style={styles.popper}
+            {...attributes.popper}
+            className={`${classes.tooltip}`}
+            id="tooltip"
+            role="tooltip"
+          >
+            {label}
+            <div
+              ref={setArrowElement}
+              id="arrow"
+              data-popper-arrow
+              style={styles.arrow}
+            />
+          </div>,
+          document.body
+        )}
       {children}
     </div>
   )

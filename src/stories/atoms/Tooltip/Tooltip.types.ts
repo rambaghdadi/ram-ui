@@ -1,9 +1,7 @@
 export interface ITooltipProps {
-  /**
-   * The description of the prop
-   */
   children: React.ReactNode
   label: string
+  visibleOnHover?: boolean
+  isActive?: boolean
+  followMouse?: boolean
 }
-
-export type Placement = "top" | "bottom" | "left" | "right"

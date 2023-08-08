@@ -4,6 +4,7 @@ import Modal from "./stories/molecules/Modal/Modal"
 import Notification from "./stories/atoms/Notification/Notification"
 import Pagination from "./stories/molecules/Pagination/Pagination"
 import Flex from "./stories/layout/Flex/Flex"
+import Tooltip from "./stories/atoms/Tooltip/Tooltip"
 
 function App() {
   const [page, setPage] = useState(1)
@@ -29,9 +30,11 @@ function App() {
         position={{top: "5%", right: "5px"}}
         onXClick={() => setNotification(false)}
       />
-      <Flex>
+      <Flex alignItems="center" justifyContent="center">
         <Button onClick={() => setNotification(true)}>Notification!</Button>
-        <Button onClick={() => setShow(true)}>Modal!</Button>
+        <Tooltip visibleOnHover={true} label="This is a label">
+          <Button onClick={() => setShow(true)}>Modal!</Button>
+        </Tooltip>
         <Pagination
           size="md"
           activePage={page}
@@ -45,9 +48,6 @@ function App() {
 
 export default App
 
-//Feedback
-//TODO Progress
-
 //Typography
 //TODO Text
 //TODO Title
@@ -58,17 +58,15 @@ export default App
 //TODO Accordion
 //TODO Timeline
 //TODO Drawer
-//TODO Tooltip
-//TODO Popover
 
 //INPUTS
 //TODO Segmented Control Input
+//TODO File Input / Dropzone
 //TODO Autocomplete
 //TODO Checkbox
 //TODO Chip
 //TODO Color Input
 //TODO Color Picker
-//TODO File Input / Dropzone
 //TODO Multi Select
 //TODO Select Input
 //TODO Slider Input

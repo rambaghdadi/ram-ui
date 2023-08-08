@@ -1,22 +1,23 @@
 import type {Meta, StoryObj} from "@storybook/react"
-import Tooltip from "./Tooltip"
+import FileDropzone from "./FileDropzone"
 
 const meta = {
-  title: "ATOMS/Tooltip",
-  component: Tooltip,
+  title: "MOLECULES/FileDropzone",
+  component: FileDropzone,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Tooltip>
+} satisfies Meta<typeof FileDropzone>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
-    children: "Hello World",
-    label: "This is a label",
+    uploadFiles: (data) => {
+      console.log(data)
+    },
   },
 }
 

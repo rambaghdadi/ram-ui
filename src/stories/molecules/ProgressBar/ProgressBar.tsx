@@ -1,3 +1,4 @@
+import Tooltip from "../../atoms/Tooltip/Tooltip"
 import classes from "./ProgressBar.module.css"
 import {IProgressBarProps, colors, radiuses, sizes} from "./ProgressBar.types"
 
@@ -14,9 +15,12 @@ export default function ProgressBar({
     borderRadius: radiuses[radius],
   }
 
-  const barStyles: React.CSSProperties = {
-    height: "100%",
+  const barParentStyles: React.CSSProperties = {
     width: `${clampedValue}%`,
+  }
+
+  const barStyles: React.CSSProperties = {
+    height: sizes[size],
     borderRadius: radiuses[radius],
     backgroundColor: colors[color],
   }
@@ -30,7 +34,11 @@ export default function ProgressBar({
       aria-valuemax={100}
       aria-valuenow={clampedValue}
     >
-      <div style={barStyles} className={classes.bar}></div>
+      <div style={barParentStyles}>
+        <Tooltip label={value + "%"} followMouse>
+          <div style={barStyles} className={classes.bar} />
+        </Tooltip>
+      </div>
     </div>
   )
 }

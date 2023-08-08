@@ -1,33 +1,44 @@
 .tooltip {
+  border: 1px solid var(--bg-gray-100);
   background-color: var(--bg-white);
   border-radius: var(--rounded);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-2xl);
   padding: var(--p-2);
-  position: fixed;
 
   width: max-content;
   max-width: var(--w-64);
+}
 
-  transition: all 0.2s;
+#arrow,
+#arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
 
-  opacity: 0;
-  pointer-events: none;
+#arrow {
   visibility: hidden;
 }
 
-.tooltip.visible {
-  opacity: 1;
-  pointer-events: all;
+#arrow::before {
   visibility: visible;
+  content: "";
+  transform: rotate(45deg);
 }
 
-.tooltip.visible::after {
-  content: "";
-  position: absolute;
-  top: 100%; /* Adjust as needed */
-  left: 50%;
-  margin-left: -5px; /* Half of the width */
-  border-width: 5px;
-  border-style: solid;
-  border-color: var(--bg-gray-400) transparent transparent transparent;
+#tooltip[data-popper-placement^="top"] > #arrow {
+  bottom: -4px;
+}
+
+#tooltip[data-popper-placement^="bottom"] > #arrow {
+  top: -4px;
+}
+
+#tooltip[data-popper-placement^="left"] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^="right"] > #arrow {
+  left: -4px;
 }

@@ -13,8 +13,10 @@
     "generate": "node ./bin/generate.js"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-popper": "^2.3.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.2.1",
