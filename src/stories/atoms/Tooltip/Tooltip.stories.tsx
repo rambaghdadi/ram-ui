@@ -17,6 +17,11 @@ const props: Story = {
   args: {
     children: "Hello World",
     label: "This is a label",
+    isActive: false,
+    visibleOnHover: true,
+    followMouse: false,
+    placement: "top",
+    offset: 15,
   },
 }
 

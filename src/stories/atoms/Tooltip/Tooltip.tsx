@@ -25,6 +25,8 @@ export function generateBoundingClientRect(x = 0, y = 0): () => DOMRect {
 export default function Tooltip({
   children,
   label,
+  placement = "top",
+  offset = 15,
   isActive = false,
   visibleOnHover = true,
   followMouse = false,
@@ -40,13 +42,13 @@ export default function Tooltip({
     followMouse ? virtualReference : referenceElement,
     popperElement,
     {
-      placement: "top",
+      placement: placement,
       modifiers: [
         {name: "arrow", options: {element: arrowElement}},
         {
           name: "offset",
           options: {
-            offset: [0, 15],
+            offset: [0, offset],
           },
         },
       ],

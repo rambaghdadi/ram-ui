@@ -54,14 +54,13 @@ export default App
 //TODO Table
 
 //Display
-//TODO Carousel
 //TODO Accordion
+//TODO Carousel
 //TODO Timeline
 //TODO Drawer
 
 //INPUTS
 //TODO Segmented Control Input
-//TODO File Input / Dropzone
 //TODO Autocomplete
 //TODO Checkbox
 //TODO Chip
