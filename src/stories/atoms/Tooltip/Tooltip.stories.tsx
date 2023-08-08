@@ -25,8 +25,15 @@ const props: Story = {
   },
 }
 
-export const Default: Story = {
+export const OnHover: Story = {
   args: {
     ...props.args,
+  },
+}
+
+export const Active: Story = {
+  args: {
+    ...props.args,
+    isActive: true,
   },
 }
