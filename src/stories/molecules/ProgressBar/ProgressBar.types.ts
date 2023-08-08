@@ -1,3 +1,5 @@
+import {Color} from "../../../styles/colors"
+
 export interface IProgressBarProps {
   size?: Size
   radius?: Radius
@@ -17,12 +19,5 @@ export const radiuses = {
   lg: "var(--rounded-2xl)",
 } as const
 
-export const colors = {
-  blue: "var(--bg-blue-600)",
-  green: "var(--bg-green-600)",
-  purple: "var(--bg-purple-600)",
-}
-
 type Size = keyof typeof sizes
 type Radius = keyof typeof radiuses
-type Color = keyof typeof colors

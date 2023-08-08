@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
+    color: "white",
     children: "Hello World",
     label: "This is a label",
     isActive: false,
@@ -35,5 +36,12 @@ export const Active: Story = {
   args: {
     ...props.args,
     isActive: true,
+  },
+}
+export const Blue: Story = {
+  args: {
+    ...props.args,
+    isActive: true,
+    color: "blue",
   },
 }

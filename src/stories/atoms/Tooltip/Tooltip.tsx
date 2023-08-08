@@ -1,8 +1,9 @@
 import classes from "./Tooltip.module.css"
 import {createPortal} from "react-dom"
 import {ITooltipProps} from "./Tooltip.types"
-import {useEffect, useState} from "react"
+import {CSSProperties, useEffect, useState} from "react"
 import {usePopper} from "react-popper"
+import {colors} from "../../../styles/colors"
 
 const virtualReference = {
   getBoundingClientRect: generateBoundingClientRect(),
@@ -25,6 +26,7 @@ export function generateBoundingClientRect(x = 0, y = 0): () => DOMRect {
 export default function Tooltip({
   children,
   label,
+  color = "white",
   placement = "top",
   offset = 15,
   isActive = false,
@@ -70,6 +72,11 @@ export default function Tooltip({
       referenceElement?.removeEventListener("mousemove", updatePosition)
   }, [referenceElement, update])
 
+  const tooltipStyles: CSSProperties = {
+    backgroundColor: colors[color],
+    color: color === "white" ? "var(--bg-black)" : "var(--bg-white)",
+  }
+
   return (
     <div
       ref={setReferenceElement}
@@ -80,7 +87,7 @@ export default function Tooltip({
         createPortal(
           <div
             ref={setPopperElement}
-            style={styles.popper}
+            style={{...styles.popper, ...tooltipStyles}}
             {...attributes.popper}
             className={`${classes.tooltip}`}
             id="tooltip"

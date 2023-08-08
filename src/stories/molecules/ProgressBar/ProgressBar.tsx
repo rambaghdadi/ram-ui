@@ -1,6 +1,7 @@
+import {colors} from "../../../styles/colors"
 import Tooltip from "../../atoms/Tooltip/Tooltip"
 import classes from "./ProgressBar.module.css"
-import {IProgressBarProps, colors, radiuses, sizes} from "./ProgressBar.types"
+import {IProgressBarProps, radiuses, sizes} from "./ProgressBar.types"
 
 export default function ProgressBar({
   size = "md",
