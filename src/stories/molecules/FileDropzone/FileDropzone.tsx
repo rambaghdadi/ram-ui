@@ -32,9 +32,7 @@ export default function FileDropzone({
   }
 
   function onClick() {
-    if (inputRef) {
-      inputRef.current?.click()
-    }
+    inputRef.current?.click()
   }
 
   function onChange(e: ChangeEvent<HTMLInputElement>) {

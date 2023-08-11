@@ -3,7 +3,7 @@ import type {Meta, StoryObj} from "@storybook/react"
 import Notification from "./Notification"
 
 const meta = {
-  title: "ATOMS/Notification",
+  title: "FEEDBACK/Notification",
   component: Notification,
   parameters: {
     layout: "centered",

@@ -3,7 +3,7 @@ import type {Meta, StoryObj} from "@storybook/react"
 import Modal from "./Modal"
 
 const meta = {
-  title: "Molecules/Modal",
+  title: "OVERLAYS/Modal",
   component: Modal,
   parameters: {},
   tags: ["autodocs"],

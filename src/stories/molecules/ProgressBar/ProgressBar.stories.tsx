@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from "@storybook/react"
 import ProgressBar from "./ProgressBar"
 
 const meta = {
-  title: "MOLECULES/ProgressBar",
+  title: "FEEDBACK/ProgressBar",
   component: ProgressBar,
   parameters: {},
 

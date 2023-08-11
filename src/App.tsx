@@ -5,6 +5,8 @@ import Notification from "./stories/atoms/Notification/Notification"
 import Pagination from "./stories/molecules/Pagination/Pagination"
 import Flex from "./stories/layout/Flex/Flex"
 import Tooltip from "./stories/atoms/Tooltip/Tooltip"
+import Accordion from "./stories/molecules/Accordion/Accordion"
+import AccordionItem from "./stories/molecules/Accordion/components/AccordionItem/AccordionItem"
 
 function App() {
   const [page, setPage] = useState(1)
@@ -42,6 +44,14 @@ function App() {
           onPageChange={setPage}
         />
       </Flex>
+      <Accordion>
+        <AccordionItem iconSrc="./ss.png" title="First" body="How do you do?" />
+        <AccordionItem
+          iconSrc="./gg.png"
+          title="Second"
+          body="How do you do too?"
+        />
+      </Accordion>
     </div>
   )
 }

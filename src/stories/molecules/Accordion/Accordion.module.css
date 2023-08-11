@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rounded);
+  overflow: hidden;
+}
+
+.contained {
+  border: 1px solid var(--bg-gray-300);
+}
+
+.contained:last-child {
+  border-bottom: none !important;
+}
+
+.seperated {
+  gap: var(--gap-4);
+}

@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from "@storybook/react"
 import FileDropzone from "./FileDropzone"
 
 const meta = {
-  title: "MOLECULES/FileDropzone",
+  title: "INPUTS/FileDropzone",
   component: FileDropzone,
   parameters: {
     layout: "centered",
@@ -15,6 +15,8 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
+    maxNumOfFiles: 10,
+    maxFileSizeKb: 10000,
     uploadFiles: (data) => {
       console.log(data)
     },
