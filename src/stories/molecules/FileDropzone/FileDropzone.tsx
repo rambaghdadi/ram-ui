@@ -82,7 +82,7 @@ export default function FileDropzone({
           <p className={classes.mainText}>Drag here or click to select files</p>
           <p className={classes.secondaryText}>
             Attach as many files as you like, each file should not exceed
-            {" " + (maxFileSizeKb / 1000).toFixed(0) + "Mb"}.
+            {" " + (maxFileSizeKb / 1000).toFixed(0) + " " + "MB"}.
           </p>
           {error && <p className={classes.errorMessage}>{error}</p>}
         </div>
