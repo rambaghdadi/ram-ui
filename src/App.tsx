@@ -1,59 +1,19 @@
-import {useState} from "react"
-import Button from "./stories/atoms/Button/Button"
-import Modal from "./stories/molecules/Modal/Modal"
-import Notification from "./stories/atoms/Notification/Notification"
-import Pagination from "./stories/molecules/Pagination/Pagination"
-import Flex from "./stories/layout/Flex/Flex"
-import Tooltip from "./stories/atoms/Tooltip/Tooltip"
-import Accordion from "./stories/molecules/Accordion/Accordion"
-import AccordionItem from "./stories/molecules/Accordion/components/AccordionItem/AccordionItem"
+// import {useState} from "react"
+// import Button from "./stories/atoms/Button/Button"
+// import Modal from "./stories/molecules/Modal/Modal"
+// import Notification from "./stories/atoms/Notification/Notification"
+// import Pagination from "./stories/molecules/Pagination/Pagination"
+// import Flex from "./stories/layout/Flex/Flex"
+// import Tooltip from "./stories/atoms/Tooltip/Tooltip"
+// import Accordion from "./stories/molecules/Accordion/Accordion"
+// import AccordionItem from "./stories/molecules/Accordion/components/AccordionItem/AccordionItem"
 
 function App() {
-  const [page, setPage] = useState(1)
-  const [show, setShow] = useState(false)
-  const [notification, setNotification] = useState(false)
-  return (
-    <div>
-      <Modal
-        isBlured
-        withHeader
-        onXClick={() => setShow(!show)}
-        title="Welp"
-        onBackdropClick={() => setShow(!show)}
-        isVisible={show}
-      >
-        Hi!
-      </Modal>
-      <Notification
-        color="success"
-        isVisible={notification}
-        title="Title"
-        message="This is the message!"
-        position={{top: "5%", right: "5px"}}
-        onXClick={() => setNotification(false)}
-      />
-      <Flex alignItems="center" justifyContent="center">
-        <Button onClick={() => setNotification(true)}>Notification!</Button>
-        <Tooltip visibleOnHover={true} label="This is a label">
-          <Button onClick={() => setShow(true)}>Modal!</Button>
-        </Tooltip>
-        <Pagination
-          size="md"
-          activePage={page}
-          totalPages={15}
-          onPageChange={setPage}
-        />
-      </Flex>
-      <Accordion>
-        <AccordionItem iconSrc="./ss.png" title="First" body="How do you do?" />
-        <AccordionItem
-          iconSrc="./gg.png"
-          title="Second"
-          body="How do you do too?"
-        />
-      </Accordion>
-    </div>
-  )
+  // const [page, setPage] = useState(1)
+  // const [show, setShow] = useState(false)
+  // const [notification, setNotification] = useState(false)
+
+  return <div>Hello World!</div>
 }
 
 export default App
@@ -61,9 +21,9 @@ export default App
 //Typography
 //TODO Text
 //TODO Title
-//TODO Table
 
 //Display
+//TODO Table
 //TODO Accordion
 //TODO Carousel
 //TODO Timeline
