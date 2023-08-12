@@ -24,7 +24,6 @@ export default App
 
 //Display
 //TODO Table
-//TODO Accordion
 //TODO Carousel
 //TODO Timeline
 //TODO Drawer
@@ -39,7 +38,6 @@ export default App
 //TODO Multi Select
 //TODO Select Input
 //TODO Slider Input
-//TODO Basic Input
 //TODO Number Input
 //TODO Text Input
 //TODO Text Area Input

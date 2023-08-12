@@ -1,0 +1,48 @@
+/* CONTAINER */
+.container {
+  border-radius: var(--rounded);
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container.border {
+  border: 1px solid var(--bg-gray-300);
+}
+
+/* TABLE */
+.table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* TABLE ROWS */
+.table tr {
+  border-bottom: 1px solid var(--bg-gray-200);
+}
+.striped:nth-child(even) {
+  background-color: var(--bg-gray-100);
+}
+.hover:hover {
+  background-color: var(--bg-gray-200);
+}
+
+/* HEAD CELLS */
+.table tr th {
+  text-align: left;
+}
+
+/* COLUMNS */
+.columns {
+  border-left: 1px solid var(--bg-gray-200);
+  border-right: 1px solid var(--bg-gray-200);
+}
+
+.columns:first-child {
+  border-left: none;
+}
+
+.columns:last-child {
+  border-right: none;
+}
