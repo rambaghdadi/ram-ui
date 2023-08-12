@@ -14,7 +14,22 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const props: Story = {
-  args: {},
+  args: {
+    data: [
+      {
+        label: "Friends",
+        value: "friends",
+      },
+      {
+        label: "Modern Family",
+        value: "modernFamily",
+      },
+      {
+        label: "Community",
+        value: "community",
+      },
+    ],
+  },
 }
 
 export const Default: Story = {
