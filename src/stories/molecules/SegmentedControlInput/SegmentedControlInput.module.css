@@ -17,28 +17,38 @@
 
 .selector {
   border-radius: var(--rounded);
-  background-color: rgb(0, 169, 107);
   position: absolute;
   height: 100%;
   top: 0;
   left: 0;
-  transition: all 0.3s;
+
+  transition-duration: 200ms, 200ms;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+  transition-property: left, width;
+
+  z-index: 0;
 }
 
 .container button {
   all: unset;
-  transition: all 0.3s;
   background-color: transparent;
   cursor: pointer;
   border-radius: var(--rounded);
+  text-align: center;
+  text-overflow: ellipsis;
 
   padding: var(--p-2) var(--p-3);
   font-weight: 500;
-  z-index: 2;
+  z-index: 1;
 
   overflow: hidden;
 }
 
 .container button:active {
   transform: translate(0, 2px);
+}
+
+.input {
+  display: none;
 }

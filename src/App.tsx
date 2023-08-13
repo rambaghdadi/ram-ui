@@ -8,12 +8,58 @@
 // import Accordion from "./stories/molecules/Accordion/Accordion"
 // import AccordionItem from "./stories/molecules/Accordion/components/AccordionItem/AccordionItem"
 
+import {useState} from "react"
+import TextInput from "./stories/atoms/TextInput/TextInput"
+import SegmentedControlInput from "./stories/molecules/SegmentedControlInput/SegmentedControlInput"
+import Button from "./stories/atoms/Button/Button"
+import Flex from "./stories/layout/Flex/Flex"
+
 function App() {
   // const [page, setPage] = useState(1)
   // const [show, setShow] = useState(false)
   // const [notification, setNotification] = useState(false)
+  const [textValue, setTextValue] = useState("")
+  const [controlValue, setControlValue] = useState("one")
 
-  return <div>Hello World!</div>
+  function handleSubmit(e: any) {
+    e.preventDefault()
+    console.log(controlValue)
+    console.log(textValue)
+  }
+
+  return (
+    <div style={{padding: "10rem"}}>
+      <form onSubmit={handleSubmit}>
+        <Flex>
+          <TextInput
+            id="test"
+            name="test"
+            placeholder="Hello World"
+            value={textValue}
+            onChange={(e) => setTextValue(e.target.value)}
+          />
+          <TextInput
+            id="test"
+            name="test"
+            placeholder="Hello World"
+            value={textValue}
+            onChange={(e) => setTextValue(e.target.value)}
+          />
+          <SegmentedControlInput
+            color="blue"
+            onChange={(e) => setControlValue(e)}
+            value={controlValue}
+            data={[
+              {value: "one", label: "One"},
+              {value: "two", label: "Two"},
+              {value: "three", label: "Three"},
+            ]}
+          />
+          <Button type="submit">Submit</Button>
+        </Flex>
+      </form>
+    </div>
+  )
 }
 
 export default App

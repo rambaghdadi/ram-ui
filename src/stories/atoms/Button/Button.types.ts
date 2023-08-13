@@ -35,6 +35,57 @@ export const colors = {
       hover: "var(--bg-emerald-400)",
     },
   },
+  red: {
+    filled: {
+      background: "var(--bg-red-600)",
+      hover: "var(--bg-red-700)",
+      font: "var(--bg-white)",
+    },
+    outline: {
+      background: "var(--bg-white)",
+      font: "var(--bg-red-600)",
+      hover: "var(--bg-red-200)",
+    },
+    light: {
+      background: "var(--bg-red-300)",
+      font: "var(--bg-red-600)",
+      hover: "var(--bg-red-400)",
+    },
+  },
+  purple: {
+    filled: {
+      background: "var(--bg-purple-600)",
+      hover: "var(--bg-purple-700)",
+      font: "var(--bg-white)",
+    },
+    outline: {
+      background: "var(--bg-white)",
+      font: "var(--bg-purple-600)",
+      hover: "var(--bg-purple-200)",
+    },
+    light: {
+      background: "var(--bg-purple-300)",
+      font: "var(--bg-purple-600)",
+      hover: "var(--bg-purple-400)",
+    },
+  },
+  orange: {
+    filled: {
+      background: "var(--bg-orange-600)",
+      hover: "var(--bg-orange-700)",
+      font: "var(--bg-white)",
+    },
+    outline: {
+      background: "var(--bg-white)",
+      font: "var(--bg-orange-600)",
+      hover: "var(--bg-orange-200)",
+    },
+    light: {
+      background: "var(--bg-orange-300)",
+      font: "var(--bg-orange-600)",
+      hover: "var(--bg-orange-400)",
+    },
+  },
 } as const
 
 export const sizes = {

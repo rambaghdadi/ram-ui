@@ -10,16 +10,14 @@ body {
   min-height: 100vh;
   font-family: "Urbanist", sans-serif;
   position: relative;
-  color: #333;
+  color: var(--bg-dark);
 }
 
 :root {
   /* COLORS */
-  --bg-inherit: inherit;
-  --bg-transparent: transparent;
   --bg-black: rgb(0 0 0);
   --bg-white: rgb(255 255 255);
-  --bg-dark: rgb(51, 51, 51);
+  --bg-dark: #333;
   --bg-slate-50: rgb(248 250 252);
   --bg-slate-100: rgb(241 245 249);
   --bg-slate-200: rgb(226 232 240);
@@ -343,7 +341,6 @@ body {
   --m-72: 18rem;
   --m-80: 20rem;
   --m-96: 24rem;
-  --m-auto: auto;
 
   /* GAP */
   --gap-0: 0px;
@@ -445,16 +442,9 @@ body {
   --w-72: 18rem;
   --w-80: 20rem;
   --w-96: 24rem;
-  --w-auto: auto;
-  --w-full: 100%;
-  --w-screen: 100vw;
-  --w-min: min-content;
-  --w-max: max-content;
-  --w-fit: fit-content;
 
   /* MAX WIDTH */
   --max-w-0: 0rem;
-  --max-w-none: none;
   --max-w-xs: 20rem;
   --max-w-sm: 24rem;
   --max-w-md: 28rem;
@@ -467,9 +457,6 @@ body {
   --max-w-6xl: 72rem;
   --max-w-7xl: 80rem;
   --max-w-full: 100%;
-  --max-w-min: min-content;
-  --max-w-max: max-content;
-  --max-w-fit: fit-content;
   --max-w-prose: 65ch;
   --max-w-screen-sm: 640px;
   --max-w-screen-md: 768px;
