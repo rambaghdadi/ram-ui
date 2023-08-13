@@ -1,11 +1,5 @@
 import {HTMLAttributes} from "react"
-
-export const colors = {
-  blue: "var(--bg-blue-600)",
-  green: "var(--bg-emerald-600)",
-} as const
-
-type Color = keyof typeof colors
+import {Color} from "../../../styles/colors"
 
 const commonMobileSizes = {
   padding: "var(--p-2)",

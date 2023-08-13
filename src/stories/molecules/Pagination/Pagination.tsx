@@ -1,6 +1,7 @@
 import useMediaQuery from "../../../hooks/useMediaQuery"
+import {colors} from "../../../styles/colors"
 import classes from "./Pagination.module.css"
-import {IPaginationProps, colors, sizes} from "./Pagination.types"
+import {IPaginationProps, sizes} from "./Pagination.types"
 import PageButton from "./components/PageButton/PageButton"
 import PaginationLeftArrow from "./components/PaginationArrows/PaginationLeftArrow"
 import PaginationRightArrow from "./components/PaginationArrows/PaginationRightArrow"
