@@ -1,8 +1,10 @@
-import {useEffect, useRef, useState} from "react"
+import {CSSProperties, useEffect, useRef, useState} from "react"
 import classes from "./SegmentedControlInput.module.css"
 import {ISegmentedControlInputProps} from "./SegmentedControlInput.types"
+import {colors} from "../../../styles/colors"
 
 export default function SegmentedControlInput({
+  color = "blue",
   data,
 }: ISegmentedControlInputProps) {
   const firstButtonRef = useRef<HTMLButtonElement>(null)
@@ -37,16 +39,16 @@ export default function SegmentedControlInput({
     setSelectorWidth(width)
   }
 
+  const styles: CSSProperties = {
+    backgroundColor: colors[color],
+    width: selectorWidth + "px",
+    left: selectorPosition,
+  }
+
   return (
     <div className={classes.container}>
       <div ref={containerRef} className={classes.innerContainer}>
-        <div
-          style={{
-            width: selectorWidth + "px",
-            left: selectorPosition,
-          }}
-          className={classes.selector}
-        ></div>
+        <div style={styles} className={classes.selector}></div>
         {data.map(({label}, i) => (
           <button onClick={handleOnClick} ref={i === 0 ? firstButtonRef : null}>
             {label}

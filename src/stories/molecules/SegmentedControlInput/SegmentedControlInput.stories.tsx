@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
+    color: "blue",
     data: [
       {
         label: "Friends",
