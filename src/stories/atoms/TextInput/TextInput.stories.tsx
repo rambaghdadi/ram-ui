@@ -26,6 +26,12 @@ export const Default: Story = {
     ...props.args,
   },
 }
+export const WithUncontrolledValue: Story = {
+  args: {
+    ...props.args,
+    value: "Hello World",
+  },
+}
 export const Error: Story = {
   args: {
     ...props.args,
