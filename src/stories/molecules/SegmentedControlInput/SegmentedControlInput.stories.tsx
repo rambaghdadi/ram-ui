@@ -3,7 +3,7 @@ import SegmentedControlInput from "./SegmentedControlInput"
 import {useState} from "react"
 
 const meta: Meta<typeof SegmentedControlInput> = {
-  title: "BUTTONS/SegmentedControlInput",
+  title: "INPUTS/SegmentedControlInput",
   component: SegmentedControlInput,
   parameters: {
     layout: "centered",
