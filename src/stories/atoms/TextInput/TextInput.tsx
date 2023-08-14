@@ -10,6 +10,7 @@ export default function TextInput({
   disabled = false,
   name,
   id,
+  ...props
 }: ITextInputProps) {
   const errorCls = !!error ? classes.error : ""
   const disabledCls = disabled ? classes.disabled : ""
@@ -24,7 +25,7 @@ export default function TextInput({
           aria-invalid={!!error}
           placeholder=" "
           className={`${classes.input} ${errorCls} ${disabledCls}`}
-          {...{value, onChange, required, disabled, name, id}}
+          {...{...props, value, onChange, required, disabled, name, id}}
         />
         <p className={`${classes.placeholder} ${errorCls}`}>
           {(error && "Invalid Input") ||

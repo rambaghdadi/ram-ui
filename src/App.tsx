@@ -13,6 +13,7 @@ import TextInput from "./stories/atoms/TextInput/TextInput"
 import SegmentedControlInput from "./stories/molecules/SegmentedControlInput/SegmentedControlInput"
 import Button from "./stories/atoms/Button/Button"
 import Flex from "./stories/layout/Flex/Flex"
+import TextArea from "./stories/atoms/TextArea/TextArea"
 
 function App() {
   // const [page, setPage] = useState(1)
