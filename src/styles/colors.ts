@@ -25,3 +25,5 @@ export const colors = {
   black: "var(--bg-black)",
 }
 export type Color = keyof typeof colors
+
+export const darkFontColors = ["white"]

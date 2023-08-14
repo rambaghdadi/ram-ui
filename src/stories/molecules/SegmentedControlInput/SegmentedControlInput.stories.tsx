@@ -19,7 +19,7 @@ const SegmentedControlWithState = () => {
 
   return (
     <SegmentedControlInput
-      color={"blue"}
+      color={"sky"}
       value={value}
       onChange={(e) => setValue(e)}
       data={[
@@ -34,6 +34,10 @@ const SegmentedControlWithState = () => {
         {
           label: "Community",
           value: "community",
+        },
+        {
+          label: "The Office",
+          value: "theOffice",
         },
       ]}
     />

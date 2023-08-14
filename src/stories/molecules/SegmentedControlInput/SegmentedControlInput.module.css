@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-3);
+  gap: var(--gap-0);
 }
 
 .selector {
@@ -34,15 +34,20 @@
   all: unset;
   background-color: transparent;
   cursor: pointer;
-  border-radius: var(--rounded);
   text-align: center;
   text-overflow: ellipsis;
+
+  border-right: 1px solid var(--bg-gray-200);
 
   padding: var(--p-2) var(--p-3);
   font-weight: 500;
   z-index: 1;
 
   overflow: hidden;
+}
+
+.container:last-child {
+  border-right: none !important;
 }
 
 .container button:active {
