@@ -24,7 +24,7 @@ const SelectWithState = () => {
     .map((_, i: number) => `External ${i}`)
 
   const [value, setValue] = useState("")
-  const [data, setData] = useState<string[]>([])
+  const [data, setData] = useState<string[]>(localData)
 
   function onChangeHandler(data: string) {
     const updatedData = externalData.filter((item) => item.includes(data))
@@ -34,11 +34,12 @@ const SelectWithState = () => {
   return (
     <div style={{minHeight: "40vh"}}>
       <Select
-        isLocalSearch={false}
+        //Change when necessary
+        isLocalSearch={true}
         id="selectid"
         name="selectid"
         placeholder="Select one"
-        onInputChange={onChangeHandler}
+        // onInputChange={onChangeHandler}
         onSelect={(data) => setValue(data)}
         value={value}
         data={data}

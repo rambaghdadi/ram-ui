@@ -7,7 +7,7 @@ export interface ISelectProps
   > {
   data: string[]
   value: string
-  onInputChange: (data: string) => void
+  onInputChange?: (data: string) => void
   onSelect: (data: string) => void
   clearSelection: () => void
   nothingFound?: string
