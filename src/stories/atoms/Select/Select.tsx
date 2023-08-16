@@ -1,8 +1,10 @@
-import {useState} from "react"
+import {useCallback, useState} from "react"
 import SelectIcon from "./SVGs/SelectIcon"
 import classes from "./Select.module.css"
 import {ISelectProps} from "./Select.types"
 import XIcon from "./SVGs/XIcon"
+import {debounce} from "../../../utils/helperFunctions"
+import ResultContainer from "./components/ResultContainer"
 
 export default function Select({
   data,
@@ -16,6 +18,8 @@ export default function Select({
   nothingFound = "No results found",
   disabled,
   isLocalSearch = true,
+  debounceSearch = true,
+  debounceTimeInMs = 250,
 }: ISelectProps) {
   const [isActive, setIsActive] = useState(false)
   const [isFiltered, setIsFiltered] = useState(false)
@@ -23,6 +27,9 @@ export default function Select({
   const [previousSelection, setPreviousSelection] = useState("")
 
   const isValidSelection = data.includes(value)
+
+  const onInputChangeDebounced =
+    onInputChange && useCallback(debounce(onInputChange, debounceTimeInMs), [])
 
   const filteredData = isLocalSearch
     ? data.filter((item) => {
@@ -56,7 +63,9 @@ export default function Select({
           value={value}
           onChange={(e) => {
             setIsFiltered(true)
-            onInputChange(e.target.value)
+            debounceSearch
+              ? onInputChangeDebounced?.(e.target.value)
+              : onInputChange?.(e.target.value)
             onSelect(e.target.value)
           }}
           id={id}
@@ -74,33 +83,18 @@ export default function Select({
           />
         )}
       </div>
-
       {isActive && (
-        <div className={`${classes.resultContainer}`}>
-          {!!filteredData.length ? (
-            filteredData.map((item, i) => (
-              <p
-                onPointerDown={() => {
-                  setIsFocused(true)
-                  setPreviousSelection(item)
-                  onSelect(item)
-                }}
-                onPointerUp={() => {
-                  setIsFocused(false)
-                  setIsActive(false)
-                }}
-                key={i}
-                className={`${classes.result} ${
-                  previousSelection === item ? classes.selected : ""
-                }`}
-              >
-                {item}
-              </p>
-            ))
-          ) : (
-            <p className={classes.noResults}>{nothingFound}</p>
-          )}
-        </div>
+        <ResultContainer
+          {...{
+            onSelect,
+            setIsActive,
+            setIsFocused,
+            filteredData,
+            nothingFound,
+            previousSelection,
+            setPreviousSelection,
+          }}
+        />
       )}
     </div>
   )

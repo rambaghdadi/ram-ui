@@ -12,4 +12,6 @@ export interface ISelectProps
   clearSelection: () => void
   nothingFound?: string
   isLocalSearch?: boolean
+  debounceSearch?: boolean
+  debounceTimeInMs?: number
 }
