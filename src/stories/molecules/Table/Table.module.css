@@ -9,7 +9,7 @@
 .container.border {
   border: 1px solid var(--bg-gray-300);
 }
-.container.border .table tr:last-child {
+.container.border .table tbody tr:last-child {
   border-bottom: none;
 }
 
@@ -48,4 +48,48 @@
 
 .columns:last-child {
   border-right: none;
+}
+
+/* EMPTY TABLE */
+.emptyTableCell {
+  text-align: center;
+  font-weight: 500;
+  padding-top: var(--p-10) !important;
+  padding-bottom: var(--p-10) !important;
+  background-color: var(--bg-gray-100);
+}
+
+/* LOADING TABLE */
+.loadingContent {
+  height: 40px;
+  position: relative;
+}
+
+.loadingContent:after {
+  content: "";
+  width: 100%;
+  height: 70%;
+
+  position: absolute;
+  top: 15%;
+  left: 0;
+  border-radius: var(--rounded);
+
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 240, 240, 0) 0%,
+    rgba(240, 240, 240, 0.3) 20%,
+    rgba(240, 240, 240, 0.6) 60%,
+    rgba(240, 240, 240, 0) 100%
+  );
+
+  animation: shimmer 2s infinite;
+  background-size: cover;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }

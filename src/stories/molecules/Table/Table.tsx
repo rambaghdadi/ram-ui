@@ -8,11 +8,9 @@ import Pagination from "./Pagination/Pagination"
 //TODO Sticky Header / Scroll
 //TODO Row selection
 //TODO Expandable Rows
-//TODO OnClick Rows
 //TODO Column Visibility Toggle
 //TODO row highlighting on importance
 //TODO Row actions
-//TODO Loading / Empty States
 
 export default function Table({
   columns,
@@ -23,6 +21,7 @@ export default function Table({
   highlightOnHover = true,
   withColumnBorders = false,
   isPaginated = false,
+  isLoading,
 
   //Pagination
   ...props
@@ -49,18 +48,45 @@ export default function Table({
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, i) => (
-            <tr key={i} className={`${hoverCls} ${stripedCls}`}>
-              {row.map((content, i) => (
-                <td key={i} style={cellStyles} className={columnsCls}>
-                  {content}
-                </td>
-              ))}
+          {!rows.length && !isLoading && (
+            <tr>
+              <td
+                colSpan={columns.length}
+                style={cellStyles}
+                className={classes.emptyTableCell}
+              >
+                No data available.
+              </td>
             </tr>
-          ))}
+          )}
+          {isLoading
+            ? Array.from({length: 7}).map((_, i) => (
+                <tr key={i} className={`${hoverCls} ${stripedCls}`}>
+                  {Array.from({length: columns.length}).map((_, i) => (
+                    <td
+                      key={i}
+                      style={cellStyles}
+                      className={`${columnsCls} ${classes.loadingContent}`}
+                    ></td>
+                  ))}
+                </tr>
+              ))
+            : rows.map(({data, onClickHandler}, i) => (
+                <tr
+                  onClick={onClickHandler}
+                  key={i}
+                  className={`${hoverCls} ${stripedCls}`}
+                >
+                  {data.map((content, i) => (
+                    <td key={i} style={cellStyles} className={columnsCls}>
+                      {content}
+                    </td>
+                  ))}
+                </tr>
+              ))}
         </tbody>
       </table>
-      {isPaginated && <Pagination {...props} />}
+      {isPaginated && !!rows.length && <Pagination {...props} />}
     </div>
   )
 }

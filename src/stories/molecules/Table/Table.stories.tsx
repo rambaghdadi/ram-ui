@@ -15,8 +15,8 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
-    lower: 1,
-    upper: 5,
+    lowerPage: 1,
+    upperPage: 5,
     totalItems: 5,
     withColumnBorders: false,
     highlightOnHover: true,
@@ -25,12 +25,23 @@ const props: Story = {
     spacing: "md",
     isPaginated: true,
     columns: ["Name", "Age", "Location", "Height", "Weight"],
+    isLoading: false,
     rows: [
-      ["George", "18", "London", "164 cm", "70 kg"],
-      ["James", "24", "New York", "190 cm", "120 kg"],
-      ["Jill", "67", "Paris", "175 cm", "93 kg"],
-      ["Jad", "42", "Madrid", "177 cm", "81 kg"],
-      ["Michael", "16", "Rome", "182 cm", "114 kg"],
+      {
+        data: ["George", "18", "London", "164 cm", "70 kg"],
+      },
+      {
+        data: ["James", "24", "New York", "190 cm", "120 kg"],
+      },
+      {
+        data: ["Jill", "67", "Paris", "175 cm", "93 kg"],
+      },
+      {
+        data: ["Jad", "42", "Madrid", "177 cm", "81 kg"],
+      },
+      {
+        data: ["Michael", "16", "Rome", "182 cm", "114 kg"],
+      },
     ],
   },
 }

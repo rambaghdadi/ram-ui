@@ -9,9 +9,10 @@ export interface ITableProps {
   highlightOnHover?: boolean
   withColumnBorders?: boolean
   isPaginated?: boolean
+  isLoading?: boolean
 
-  upper?: number
-  lower?: number
+  upperPage?: number
+  lowerPage?: number
   totalItems?: number
   nextPage: () => void
   previousPage: () => void
@@ -25,4 +26,7 @@ export const verticalSpacing = {
 } as const
 
 type VerticalSpacing = keyof typeof verticalSpacing
-type Row = (ReactElement | string)[]
+interface Row {
+  data: (ReactElement | string)[]
+  onClickHandler?: () => void
+}
