@@ -15,17 +15,9 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
-    lowerPage: 1,
-    upperPage: 5,
-    totalItems: 5,
-    withColumnBorders: false,
     highlightOnHover: true,
-    isStriped: true,
-    withBorder: true,
     spacing: "md",
-    isPaginated: true,
     columns: ["Name", "Age", "Location", "Height", "Weight"],
-    isLoading: false,
     rows: [
       {
         data: ["George", "18", "London", "164 cm", "70 kg"],
@@ -49,5 +41,50 @@ const props: Story = {
 export const Default: Story = {
   args: {
     ...props.args,
+  },
+}
+
+export const WithNoBorder: Story = {
+  args: {
+    ...props.args,
+    withBorder: false,
+  },
+}
+
+export const WithPagination: Story = {
+  args: {
+    ...props.args,
+    isPaginated: true,
+    lowerPage: 1,
+    upperPage: 5,
+    totalItems: 5,
+  },
+}
+
+export const WithColumns: Story = {
+  args: {
+    ...props.args,
+    withColumnBorders: true,
+  },
+}
+
+export const WithNoStripes: Story = {
+  args: {
+    ...props.args,
+    isStriped: false,
+  },
+}
+export const WithLoadingState: Story = {
+  args: {
+    ...props.args,
+    withColumnBorders: true,
+    isStriped: false,
+    isLoading: true,
+  },
+}
+export const WithNoData: Story = {
+  args: {
+    ...props.args,
+    rows: [],
   },
 }
