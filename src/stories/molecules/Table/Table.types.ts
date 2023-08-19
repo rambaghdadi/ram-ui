@@ -8,6 +8,13 @@ export interface ITableProps {
   isStriped?: boolean
   highlightOnHover?: boolean
   withColumnBorders?: boolean
+  isPaginated?: boolean
+
+  upper?: number
+  lower?: number
+  totalItems?: number
+  nextPage: () => void
+  previousPage: () => void
 }
 
 export const verticalSpacing = {

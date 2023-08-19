@@ -9,6 +9,9 @@
 .container.border {
   border: 1px solid var(--bg-gray-300);
 }
+.container.border .table tr:last-child {
+  border-bottom: none;
+}
 
 /* TABLE */
 .table {
@@ -21,7 +24,7 @@
 .table tr {
   border-bottom: 1px solid var(--bg-gray-200);
 }
-.striped:nth-child(even) {
+.striped:nth-child(odd) {
   background-color: var(--bg-gray-100);
 }
 .hover:hover {

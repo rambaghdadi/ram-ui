@@ -15,11 +15,15 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
+    lower: 1,
+    upper: 5,
+    totalItems: 5,
     withColumnBorders: false,
     highlightOnHover: true,
     isStriped: true,
     withBorder: true,
     spacing: "md",
+    isPaginated: true,
     columns: ["Name", "Age", "Location", "Height", "Weight"],
     rows: [
       ["George", "18", "London", "164 cm", "70 kg"],

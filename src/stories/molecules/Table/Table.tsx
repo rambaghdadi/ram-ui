@@ -1,8 +1,8 @@
 import {CSSProperties} from "react"
 import classes from "./Table.module.css"
 import {ITableProps, verticalSpacing} from "./Table.types"
+import Pagination from "./Pagination/Pagination"
 
-//TODO Pagination
 //TODO Sorting
 //TODO Resize Columns
 //TODO Sticky Header / Scroll
@@ -22,6 +22,10 @@ export default function Table({
   isStriped = true,
   highlightOnHover = true,
   withColumnBorders = false,
+  isPaginated = false,
+
+  //Pagination
+  ...props
 }: ITableProps) {
   const columnsCls = withColumnBorders ? classes.columns : ""
   const hoverCls = highlightOnHover ? classes.hover : ""
@@ -56,6 +60,7 @@ export default function Table({
           ))}
         </tbody>
       </table>
+      {isPaginated && <Pagination {...props} />}
     </div>
   )
 }

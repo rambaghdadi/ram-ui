@@ -22,7 +22,6 @@ export default function Select({
   debounceTimeInMs = 250,
 }: ISelectProps) {
   const [isActive, setIsActive] = useState(false)
-  const [isFiltered, setIsFiltered] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
   const [previousSelection, setPreviousSelection] = useState("")
 
@@ -32,11 +31,7 @@ export default function Select({
     onInputChange && useCallback(debounce(onInputChange, debounceTimeInMs), [])
 
   const filteredData = isLocalSearch
-    ? data.filter((item) => {
-        return isFiltered
-          ? item.toLowerCase().includes(value.toLowerCase())
-          : item
-      })
+    ? data.filter((item) => item.toLowerCase().includes(value.toLowerCase()))
     : data
 
   return (
@@ -48,7 +43,6 @@ export default function Select({
       >
         <input
           onFocus={() => {
-            setIsFiltered(false)
             setIsActive(true)
           }}
           onBlur={() => {
@@ -62,7 +56,6 @@ export default function Select({
           className={classes.input}
           value={value}
           onChange={(e) => {
-            setIsFiltered(true)
             debounceSearch
               ? onInputChangeDebounced?.(e.target.value)
               : onInputChange?.(e.target.value)

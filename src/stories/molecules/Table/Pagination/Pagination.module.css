@@ -1,0 +1,26 @@
+.paginationContainer {
+  padding: var(--p-3);
+
+  display: flex;
+  gap: var(--gap-8);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pageDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-2);
+}
+
+.totalCount {
+  font-weight: 600;
+}
+
+.chevronContainer {
+  display: flex;
+  gap: var(--gap-2);
+  align-items: center;
+  justify-content: center;
+}
