@@ -11,9 +11,9 @@ interface PaginationProps
 export default function Pagination({
   nextPage,
   previousPage,
-  lower,
-  upper,
-  totalItems,
+  lower = 1,
+  upper = 1,
+  totalItems = 1,
 }: PaginationProps) {
   return (
     <div className={classes.paginationContainer}>
@@ -24,8 +24,16 @@ export default function Pagination({
         <p className={classes.totalCount}>{totalItems}</p>
       </div>
       <div className={classes.chevronContainer}>
-        <ChevronIcon onClick={previousPage} direction="left" />
-        <ChevronIcon onClick={nextPage} direction="right" />
+        <ChevronIcon
+          isActive={lower > 1}
+          onClick={previousPage}
+          direction="left"
+        />
+        <ChevronIcon
+          isActive={upper !== totalItems}
+          onClick={nextPage}
+          direction="right"
+        />
       </div>
     </div>
   )
