@@ -13,6 +13,7 @@ export default function Text({
   isItalic = false,
   textDecoration,
   weight = 400,
+  isLowercase,
   style,
   className,
 }: ITextProps) {
@@ -24,6 +25,8 @@ export default function Text({
       ? "uppercase"
       : isCapitalized
       ? "capitalize"
+      : isLowercase
+      ? "lowercase"
       : undefined,
 
     fontStyle: isItalic ? "italic" : undefined,

@@ -6,32 +6,33 @@ export default function Title({
   size = 1,
   children,
   style,
-  weight,
   color = "dark",
   isUppercase,
   isCapitalized,
   isItalic,
   textDecoration,
+  className,
 }: ITitleProps) {
   if (size < 1 || size > 6)
     throw new Error("Size prop should be between 1 and 6.")
 
-  const styles: CSSProperties = {}
+  const styles: CSSProperties = {
+    color: colors[color],
+    textTransform: isUppercase
+      ? "uppercase"
+      : isCapitalized
+      ? "capitalize"
+      : undefined,
+
+    fontStyle: isItalic ? "italic" : undefined,
+    textDecoration: textDecoration,
+  }
 
   return createElement(
     `h${size}`,
     {
-      color: colors[color],
+      className: className,
       style: {...styles, ...style},
-      fontWeight: weight ? weight : undefined,
-      textTransform: isUppercase
-        ? "uppercase"
-        : isCapitalized
-        ? "capitalize"
-        : undefined,
-
-      fontStyle: isItalic ? "italic" : undefined,
-      textDecoration: textDecoration,
     },
     children
   )

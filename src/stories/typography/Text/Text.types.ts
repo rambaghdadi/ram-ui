@@ -6,10 +6,11 @@ export interface ITextProps
   extends Omit<HTMLProps<HTMLParagraphElement>, "size"> {
   children: string
   color?: Color
-  size: Size
-  weight: number
+  size?: Size
+  weight?: number
   isCapitalized?: boolean
   isItalic?: boolean
   isUppercase?: boolean
+  isLowercase?: boolean
   textDecoration?: "underline" | "line-through"
 }
