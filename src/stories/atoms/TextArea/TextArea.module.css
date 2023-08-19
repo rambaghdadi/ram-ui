@@ -22,6 +22,7 @@
   z-index: 1;
   box-shadow: none !important;
   font-family: inherit;
+  resize: none;
 }
 
 .input:focus {
