@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from "@storybook/react"
 
 import Flex from "./Flex"
-import Button from "../../atoms/Button/Button"
+import Button from "../../buttons/Button/Button"
 
 const meta = {
   title: "LAYOUT/Flex",

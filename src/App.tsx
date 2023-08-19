@@ -7,13 +7,13 @@
 // import Tooltip from "./stories/atoms/Tooltip/Tooltip"
 // import Accordion from "./stories/molecules/Accordion/Accordion"
 // import AccordionItem from "./stories/molecules/Accordion/components/AccordionItem/AccordionItem"
+// import TextArea from "./stories/inputs/TextArea/TextArea"
 
 import {useState} from "react"
-import TextInput from "./stories/atoms/TextInput/TextInput"
-import SegmentedControlInput from "./stories/molecules/SegmentedControlInput/SegmentedControlInput"
-import Button from "./stories/atoms/Button/Button"
+import TextInput from "./stories/inputs/TextInput/TextInput"
+import SegmentedControlInput from "./stories/inputs/SegmentedControlInput/SegmentedControlInput"
+import Button from "./stories/buttons/Button/Button"
 import Flex from "./stories/layout/Flex/Flex"
-import TextArea from "./stories/atoms/TextArea/TextArea"
 
 function App() {
   // const [page, setPage] = useState(1)
@@ -64,10 +64,6 @@ function App() {
 }
 
 export default App
-
-//Typography
-//TODO Text
-//TODO Title
 
 //Display
 //TODO Carousel
