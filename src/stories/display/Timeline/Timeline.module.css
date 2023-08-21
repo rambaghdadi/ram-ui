@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.individualTime {
+  position: relative;
+
+  padding-bottom: var(--p-6);
+  padding-left: var(--p-8);
+  border-left: var(--w-1) solid;
+}
+
+.individualTime:last-child {
+  border-left-color: transparent !important;
+}
+
+.iconContainer {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: var(--rounded-full);
+  background-color: var(--bg-white);
+  border: var(--w-1) solid;
+
+  position: absolute;
+  top: 0;
+  left: -0.9rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+
+  max-width: 17rem;
+}
+
+.branchName {
+  font-weight: 600;
+}
+
+.branchDetails {
+  color: var(--bg-gray-500);
+}
+
+.branchTime {
+  font-size: var(--text-sm);
+}

@@ -66,23 +66,19 @@ function App() {
 export default App
 
 //Display
-//TODO Carousel
 //TODO Timeline
+//TODO Carousel
 //TODO Drawer
 
 //INPUTS
-//TODO Autocomplete
+//TODO Number Input
+//TODO Password Input
 //TODO Checkbox
 //TODO Chip
 //TODO Color Input
 //TODO Color Picker
 //TODO Multi Select
-//TODO Select Input
 //TODO Slider Input
-//TODO Number Input
-//TODO Text Input
-//TODO Text Area Input
-//TODO Password Input
 //TODO Pin Input
 //TODO Radio Input
 //TODO Rating Input
