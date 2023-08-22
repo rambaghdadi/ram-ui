@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>
 
 const props: Story = {
   args: {
+    id: 1,
     highlightOnHover: true,
     spacing: "md",
     withColumnBorders: true,
@@ -65,7 +66,7 @@ export const WithResizing: Story = {
   args: {
     ...props.args,
     isResizingEnable: true,
-    id: 1,
+    withColumnBorders: true,
   },
 }
 

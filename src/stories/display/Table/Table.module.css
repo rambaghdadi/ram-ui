@@ -32,6 +32,7 @@
 .columnResizer {
   cursor: ew-resize;
   width: 5px;
+  min-height: 24px;
   height: 100%;
 }
 

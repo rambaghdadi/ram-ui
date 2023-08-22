@@ -1,4 +1,4 @@
-import {CSSProperties, useEffect, useRef, useState} from "react"
+import {CSSProperties, useLayoutEffect, useRef, useState} from "react"
 import classes from "./Table.module.css"
 import {ITableProps, verticalSpacing} from "./Table.types"
 import Pagination from "./Pagination/Pagination"
@@ -47,14 +47,12 @@ export default function Table({
 
   const [startX, setStartX] = useState(0)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!tableHeadRowRef.current) return
 
     const savedWidths = localStorage.getItem(`ram-ui-table-${id}-columns-width`)
     if (savedWidths) {
-      const parsedWidths: number[] = JSON.parse(
-        localStorage.getItem("ram-ui-table-columns-width") ?? "[]"
-      )
+      const parsedWidths: number[] = JSON.parse(savedWidths ?? "[]")
       if (!!parsedWidths.length) {
         setColumnWidths(parsedWidths)
         return
@@ -78,6 +76,13 @@ export default function Table({
   function onMouseUpHandler() {
     setIsDragging(false)
     setCurrentColumnDragged(null)
+
+    if (columnWidths) {
+      localStorage.setItem(
+        `ram-ui-table-${id}-columns-width`,
+        JSON.stringify(columnWidths)
+      )
+    }
   }
 
   function onMouseMoveHandler(e: React.MouseEvent) {
@@ -92,11 +97,6 @@ export default function Table({
       return newWidths
     })
     setStartX(e.clientX)
-
-    localStorage.setItem(
-      "ram-ui-table-columns-width",
-      JSON.stringify(columnWidths)
-    )
   }
 
   const tableContainerStyles: CSSProperties = {
