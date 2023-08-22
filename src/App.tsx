@@ -65,10 +65,22 @@ function App() {
 
 export default App
 
-//Display
-//TODO Timeline
-//TODO Carousel
+//NAVIGATION
+//TODO Stepper
+
+//OVERLAYS
 //TODO Drawer
+
+//TYPOGRAPHY
+//TODO Mark
+
+//FEEDBACK
+//TODO Skeleton
+
+//Display
+//TODO Carousel
+//TODO Card
+//TODO Badge
 
 //INPUTS
 //TODO Number Input

@@ -17,6 +17,7 @@ const props: Story = {
   args: {
     highlightOnHover: true,
     spacing: "md",
+    withColumnBorders: true,
     columns: ["Name", "Age", "Location", "Height", "Weight"],
     rows: [
       {
@@ -58,6 +59,59 @@ export const WithPagination: Story = {
     lowerPage: 1,
     upperPage: 5,
     totalItems: 5,
+  },
+}
+export const WithResizing: Story = {
+  args: {
+    ...props.args,
+    isResizingEnable: true,
+    id: 1,
+  },
+}
+
+export const WithSorting: Story = {
+  args: {
+    ...props.args,
+    isSortingEnabled: true,
+    withColumnBorders: true,
+  },
+}
+export const WithStickyHeader: Story = {
+  args: {
+    ...props.args,
+    maxHeight: "15rem",
+    rows: [
+      {
+        data: ["George", "18", "London", "164 cm", "70 kg"],
+      },
+      {
+        data: ["James", "24", "New York", "190 cm", "120 kg"],
+      },
+      {
+        data: ["Jill", "67", "Paris", "175 cm", "93 kg"],
+      },
+      {
+        data: ["Jad", "42", "Madrid", "177 cm", "81 kg"],
+      },
+      {
+        data: ["Michael", "16", "Rome", "182 cm", "114 kg"],
+      },
+      {
+        data: ["George", "18", "London", "164 cm", "70 kg"],
+      },
+      {
+        data: ["James", "24", "New York", "190 cm", "120 kg"],
+      },
+      {
+        data: ["Jill", "67", "Paris", "175 cm", "93 kg"],
+      },
+      {
+        data: ["Jad", "42", "Madrid", "177 cm", "81 kg"],
+      },
+      {
+        data: ["Michael", "16", "Rome", "182 cm", "114 kg"],
+      },
+    ],
   },
 }
 

@@ -23,6 +23,7 @@ export default function Flex({
     flexWrap: wrap ? "wrap" : "nowrap",
     margin: margin ?? "",
     padding: padding ?? "",
+    height: "100%",
   }
   return (
     <div style={styles} {...{className, id}}>

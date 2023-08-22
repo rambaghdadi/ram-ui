@@ -4,7 +4,9 @@ export default function ChevronIcon({
   onClick,
   direction,
   isActive,
+  translate,
 }: {
+  translate?: string
   onClick: () => void
   direction: Direction
   isActive?: boolean
@@ -21,9 +23,10 @@ export default function ChevronIcon({
       onClick={onClick}
       style={{
         cursor: "pointer",
-        width: "1.10rem",
-        height: "1.10rem",
+        width: "1rem",
+        height: "1rem",
         rotate: dir[direction],
+        transform: translate,
       }}
       focusable="false"
       aria-hidden="true"

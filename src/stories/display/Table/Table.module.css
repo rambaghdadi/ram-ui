@@ -2,8 +2,14 @@
 .container {
   border-radius: var(--rounded);
   overflow-x: auto;
+  overflow-y: auto;
   width: 100%;
   -webkit-overflow-scrolling: touch;
+  background-color: var(--bg-white);
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari, Chrome, Opera, Samsung */
+  user-select: none;
 }
 
 .container.border {
@@ -18,6 +24,15 @@
   border: none;
   border-collapse: collapse;
   width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+
+/* COLUMNS */
+.columnResizer {
+  cursor: ew-resize;
+  width: 5px;
+  height: 100%;
 }
 
 /* TABLE ROWS */
@@ -31,6 +46,18 @@
   background-color: var(--bg-gray-200);
 }
 
+.table thead {
+  background-color: inherit;
+}
+
+/* HEAD ROW */
+.table thead tr {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+  z-index: 2;
+}
 /* HEAD CELLS */
 .table tr th {
   text-align: left;

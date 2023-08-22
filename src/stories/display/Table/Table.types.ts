@@ -10,6 +10,13 @@ export interface ITableProps {
   withColumnBorders?: boolean
   isPaginated?: boolean
   isLoading?: boolean
+  isSortingEnabled?: boolean
+  maxHeight?: string
+  isResizingEnable?: boolean
+  id?: number
+
+  sortAscending: (i: number) => void
+  sortDescending: (i: number) => void
 
   upperPage?: number
   lowerPage?: number
