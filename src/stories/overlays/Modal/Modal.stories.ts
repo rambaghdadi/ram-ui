@@ -6,7 +6,7 @@ const meta = {
   title: "OVERLAYS/Modal",
   component: Modal,
   parameters: {},
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Modal>
 
 export default meta

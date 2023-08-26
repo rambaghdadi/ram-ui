@@ -1,24 +1,27 @@
 import type {Meta, StoryObj} from "@storybook/react"
 import _NAME_ from "./_NAME_"
 
-const meta = {
+const meta: Meta<typeof _NAME_> = {
   title: "_NAME_",
   component: _NAME_,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof _NAME_>
+}
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-const props: Story = {
-  args: {},
+const props = {}
+
+const _NAME_Template: Story = {
+  render: (args) => {
+    return <_NAME_ {...props} {...args} />
+  },
 }
 
 export const Default: Story = {
-  args: {
-    ...props.args,
-  },
+  ..._NAME_Template,
+  args: {},
 }

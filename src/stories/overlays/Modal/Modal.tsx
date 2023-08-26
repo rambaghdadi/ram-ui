@@ -1,5 +1,5 @@
-import Backdrop from "./Components/Backdrop/Backdrop"
-import X from "./SVGs/X"
+import Backdrop from "../components/Backdrop/Backdrop"
+import X from "../SVGs/X"
 import classes from "./Modal.module.css"
 import {IModalProps} from "./Modal.types"
 import {useEffect, useRef} from "react"
