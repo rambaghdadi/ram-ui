@@ -14,6 +14,7 @@ import TextInput from "./stories/inputs/TextInput/TextInput"
 import SegmentedControlInput from "./stories/inputs/SegmentedControlInput/SegmentedControlInput"
 import Button from "./stories/buttons/Button/Button"
 import Flex from "./stories/layout/Flex/Flex"
+import Marker from "./stories/typography/Marker/Marker"
 
 function App() {
   // const [page, setPage] = useState(1)
@@ -57,6 +58,9 @@ function App() {
             ]}
           />
           <Button type="submit">Submit</Button>
+          <p>
+            Hello how's <Marker>it</Marker> going?
+          </p>
         </Flex>
       </form>
     </div>
@@ -65,14 +69,8 @@ function App() {
 
 export default App
 
-//NAVIGATION
-//TODO Stepper
-
 //OVERLAYS
 //TODO Drawer
-
-//TYPOGRAPHY
-//TODO Mark
 
 //FEEDBACK
 //TODO Skeleton
