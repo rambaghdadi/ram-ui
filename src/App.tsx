@@ -69,9 +69,6 @@ function App() {
 
 export default App
 
-//OVERLAYS
-//TODO Drawer
-
 //FEEDBACK
 //TODO Skeleton
 

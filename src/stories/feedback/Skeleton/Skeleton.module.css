@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  transform: translateZ(0px);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.container::before {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  left: 0rem;
+  bottom: 0rem;
+  content: "";
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+}
+
+.container::after {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  left: 0rem;
+  bottom: 0rem;
+  content: "";
+  background-color: rgb(222, 226, 230);
+  animation-duration: 1500ms;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: shimmy;
+  z-index: 11;
+}
+
+@keyframes shimmy {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
