@@ -1,7 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react"
 import Card from "./Card"
 import img from "./assets/elephants.jpg"
-import Button from "../../buttons/Button/Button"
 
 const meta: Meta<typeof Card> = {
   title: "DATA DISPLAY/Card",
