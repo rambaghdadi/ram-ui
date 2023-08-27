@@ -69,9 +69,6 @@ function App() {
 
 export default App
 
-//FEEDBACK
-//TODO Skeleton
-
 //Display
 //TODO Carousel
 //TODO Card

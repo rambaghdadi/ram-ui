@@ -1,0 +1,26 @@
+.container {
+  overflow: hidden;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow-2xl);
+}
+
+.image {
+  max-width: 100%;
+}
+
+.cardTextSection {
+  padding: var(--p-4);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+}
+
+.cardHeader {
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+
+.cardDescription {
+  color: var(--bg-gray-500);
+}
