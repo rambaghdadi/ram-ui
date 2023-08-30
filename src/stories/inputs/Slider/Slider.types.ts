@@ -1,8 +1,9 @@
 import {Color} from "../../../styles/colors"
 
 export interface ISliderProps {
-  value: number
-  onChange: (value: number) => void
-  showLabel: boolean
-  color: Color
+  value: number[]
+  onChange: (prev: number[]) => void
+  showLabel?: boolean
+  color?: Color
+  isRange?: boolean
 }

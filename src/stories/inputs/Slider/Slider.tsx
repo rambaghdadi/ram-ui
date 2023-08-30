@@ -3,13 +3,21 @@ import classes from "./Slider.module.css"
 import {ISliderProps} from "./Slider.types"
 
 export default function Slider({
-  value = 0,
+  isRange = false,
+  value = [0, 100],
   onChange,
   showLabel = true,
   color = "blue",
 }: ISliderProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isSliding, setIsSliding] = useState(false)
+  const [currentSlider, setCurrentSlider] = useState(0)
+
+  if (value.length > 2)
+    throw new Error("Array of values must not exceed a length of two.")
+
+  if (value[0] >= value[1])
+    throw new Error("Secondary value must be larger than primary value.")
 
   useEffect(() => {
     function mouseUpHandler() {
@@ -41,11 +49,18 @@ export default function Slider({
     const percentage = (Math.floor(mouseRelativePosition) / width) * 100
     const roundedPercentage = Math.min(Math.max(0, Math.floor(percentage)), 100)
 
-    onChange && onChange(+roundedPercentage)
+    if (currentSlider === 1 && roundedPercentage <= value[0]) return
+    if (currentSlider === 0 && roundedPercentage >= value[1]) return
+
+    const newValue = [...value]
+    newValue[currentSlider] = +roundedPercentage
+    onChange && onChange(newValue)
   }
 
   function onMouseMoveHandler(e: MouseEvent) {
+    e.preventDefault()
     if (!isSliding) return
+    console.log(e)
     handleMove(e.clientX)
   }
 
@@ -54,8 +69,9 @@ export default function Slider({
     handleMove(e.touches[0].clientX)
   }
 
-  const bgColor = {
+  const styles = {
     "--bg": `var(--bg-${color}-600)`,
+    cursor: isSliding ? "grabbing" : "grab",
   } as CSSProperties
 
   return (
@@ -64,28 +80,34 @@ export default function Slider({
       role="slider"
       aria-valuemin={0}
       aria-valuemax={100}
-      aria-valuenow={value}
+      aria-valuenow={value[0]}
       tabIndex={0}
-      style={{
-        cursor: isSliding ? "grabbing" : "grab",
-      }}
+      style={styles}
     >
-      <div
-        ref={containerRef}
-        className={classes.slider}
-        onMouseDown={() => setIsSliding(true)}
-        onTouchStart={() => setIsSliding(true)}
-        style={bgColor}
-      >
-        <div
-          className={classes.slide}
-          style={{
-            left: `calc(${value}% - 0.6rem)`,
-            ...bgColor,
-          }}
-        >
-          {showLabel && <div className={classes.label}>{value}%</div>}
-        </div>
+      <div ref={containerRef} className={classes.slider} style={styles}>
+        {Array.from({length: isRange ? value.length : 1}).map((_, i) => {
+          return (
+            <div
+              onMouseDown={() => {
+                setCurrentSlider(i)
+                setIsSliding(true)
+              }}
+              onTouchStart={() => {
+                setCurrentSlider(i)
+                setIsSliding(true)
+              }}
+              className={classes.slide}
+              style={{
+                left: `calc(${value[i]}% - 0.6rem)`,
+                ...styles,
+              }}
+            >
+              {(showLabel || isSliding) && (
+                <div className={classes.label}>{value[i]}</div>
+              )}
+            </div>
+          )
+        })}
       </div>
     </div>
   )

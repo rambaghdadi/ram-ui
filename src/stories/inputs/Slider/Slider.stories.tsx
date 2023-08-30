@@ -20,7 +20,7 @@ const props = {
 
 const SliderTemplate: Story = {
   render: (args) => {
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState([0, 100])
 
     return (
       <div
@@ -36,12 +36,7 @@ const SliderTemplate: Story = {
             margin: "2rem",
           }}
         >
-          <Slider
-            {...props}
-            {...args}
-            {...{value}}
-            onChange={(e) => setValue(e)}
-          />
+          <Slider {...props} {...args} {...{value}} onChange={setValue} />
         </div>
       </div>
     )
@@ -52,7 +47,13 @@ export const Default: Story = {
   ...SliderTemplate,
   args: {},
 }
-export const NoLabelGreen: Story = {
+export const isRange: Story = {
+  ...SliderTemplate,
+  args: {
+    isRange: true,
+  },
+}
+export const LabelOnDragGreen: Story = {
   ...SliderTemplate,
   args: {
     showLabel: false,
