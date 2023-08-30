@@ -16,7 +16,7 @@ export default function Slider({
   if (value.length > 2)
     throw new Error("Array of values must not exceed a length of two.")
 
-  if (value[0] >= value[1])
+  if (value[0] >= value[1] && isRange)
     throw new Error("Secondary value must be larger than primary value.")
 
   useEffect(() => {
@@ -49,8 +49,8 @@ export default function Slider({
     const percentage = (Math.floor(mouseRelativePosition) / width) * 100
     const roundedPercentage = Math.min(Math.max(0, Math.floor(percentage)), 100)
 
-    if (currentSlider === 1 && roundedPercentage <= value[0]) return
-    if (currentSlider === 0 && roundedPercentage >= value[1]) return
+    if (isRange && currentSlider === 1 && roundedPercentage <= value[0]) return
+    if (isRange && currentSlider === 0 && roundedPercentage >= value[1]) return
 
     const newValue = [...value]
     newValue[currentSlider] = +roundedPercentage
@@ -71,6 +71,7 @@ export default function Slider({
 
   const styles = {
     "--bg": `var(--bg-${color}-600)`,
+
     cursor: isSliding ? "grabbing" : "grab",
   } as CSSProperties
 
@@ -84,7 +85,18 @@ export default function Slider({
       tabIndex={0}
       style={styles}
     >
-      <div ref={containerRef} className={classes.slider} style={styles}>
+      <div
+        ref={containerRef}
+        className={classes.slider}
+        style={{
+          ...styles,
+          background: isRange
+            ? `linear-gradient(to right, var(--bg-${color}-400) 0%, var(--bg-${color}-400) ${value[0]}%,
+            var(--bg-${color}-600) ${value[0]}%, var(--bg-${color}-600) ${value[1]}%,
+            var(--bg-${color}-400) ${value[1]}%, var(--bg-${color}-400) 100%)`
+            : undefined,
+        }}
+      >
         {Array.from({length: isRange ? value.length : 1}).map((_, i) => {
           return (
             <div
