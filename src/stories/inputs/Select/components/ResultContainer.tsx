@@ -9,22 +9,33 @@ export default function ResultContainer({
   setIsActive,
   setIsFocused,
   onSelect,
+  currentSelection,
+  setCurrentSelection,
 }: IResultContainerProps) {
   return (
     <div className={`${classes.resultContainer}`}>
       {!!filteredData.length ? (
         filteredData.map((item, i) => (
           <p
-            onPointerDown={() => {
+            onMouseDown={() => {
               setIsFocused(true)
               setPreviousSelection(item)
+              setCurrentSelection(item)
               onSelect(item)
             }}
-            onPointerUp={() => {
+            onMouseUp={() => {
               setIsFocused(false)
               setIsActive(false)
             }}
             key={i}
+            style={{
+              backgroundColor:
+                currentSelection === item
+                  ? `var(--bg-blue-500)`
+                  : item === previousSelection
+                  ? `var(--bg-orange-500)`
+                  : undefined,
+            }}
             className={`${classes.result} ${
               previousSelection === item ? classes.selected : ""
             }`}

@@ -73,7 +73,6 @@ export default App
 //TODO Carousel
 
 //INPUTS
-//TODO Slider Input
 //TODO Number Input
 //TODO Password Input
 //TODO Checkbox
@@ -84,4 +83,3 @@ export default App
 //TODO Radio Input
 //TODO Rating Input
 //TODO Switch Input
-//TODO Calendar

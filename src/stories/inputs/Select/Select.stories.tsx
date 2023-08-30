@@ -27,14 +27,14 @@ const SelectWithState = () => {
     <div style={{minHeight: "40vh"}}>
       <Select
         isLocalSearch={true}
-        // onInputChange={onChangeHandler}
+        // onInputChange={(data) => setValue(data)}
         // debounceSearch
         // debounceTimeInMs={500}
         //Change above when necessary
         id="selectid"
         name="selectid"
         placeholder="Select one"
-        onSelect={(data) => setValue(data)}
+        onSelect={setValue}
         value={value}
         data={data}
         clearSelection={() => setValue("")}

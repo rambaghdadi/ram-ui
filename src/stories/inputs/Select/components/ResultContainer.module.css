@@ -25,7 +25,6 @@
 }
 
 .selected {
-  background-color: var(--bg-blue-500);
   color: var(--bg-white);
 }
 

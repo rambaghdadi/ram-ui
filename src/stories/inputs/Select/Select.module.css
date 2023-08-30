@@ -30,6 +30,7 @@
   border: none;
   outline: none;
   font-size: var(--text-base);
+  background-color: inherit;
 }
 
 .input[type="search"] {
