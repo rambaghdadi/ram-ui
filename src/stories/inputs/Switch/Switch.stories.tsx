@@ -6,7 +6,7 @@ const meta: Meta<typeof Switch> = {
   title: "INPUTS/Switch",
   component: Switch,
   parameters: {
-    // layout: "centered",
+    layout: "centered",
   },
   tags: ["autodocs"],
 }
