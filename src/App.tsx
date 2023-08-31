@@ -82,4 +82,3 @@ export default App
 //TODO Pin Input
 //TODO Radio Input
 //TODO Rating Input
-//TODO Switch Input

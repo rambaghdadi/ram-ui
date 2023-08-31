@@ -1,0 +1,66 @@
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-2);
+}
+
+.checkboxContainer.disabled {
+  pointer-events: none;
+}
+
+.checkboxContainer.disabled .input {
+  background-color: var(--bg-gray-300);
+}
+
+.inputContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.input {
+  appearance: none;
+  background-color: rgb(255, 255, 255);
+  border: 0.0625rem solid rgb(206, 212, 218);
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--rounded);
+  padding-top: 0px;
+  display: block;
+  margin-top: 0px;
+  transition-duration: 100ms, 100ms;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+  transition-property: border-color, background-color;
+  cursor: default;
+  z-index: 1;
+}
+
+.input[type="checkbox"]:checked {
+  background-color: var(--bg);
+}
+
+.icon {
+  color: rgb(255, 255, 255);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
+  transition-duration: 100ms;
+  pointer-events: none;
+  width: 60%;
+  z-index: 2;
+  margin-top: auto;
+}
+
+.label span {
+  color: var(--bg-red-600);
+}
+
+.error {
+  margin-top: var(--m-3);
+  color: var(--bg-red-600);
+}
