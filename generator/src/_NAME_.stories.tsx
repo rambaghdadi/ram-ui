@@ -17,11 +17,13 @@ const props = {}
 
 const _NAME_Template: Story = {
   render: (args) => {
-    return <_NAME_ {...props} {...args} />
+    return <_NAME_ {...args} />
   },
 }
 
 export const Default: Story = {
   ..._NAME_Template,
-  args: {},
+  args: {
+    ...props,
+  },
 }

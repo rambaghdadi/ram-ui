@@ -1,0 +1,45 @@
+.parent {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-2);
+}
+
+.container {
+  width: 2.5rem;
+  height: 1.3rem;
+  border-radius: var(--rounded-full);
+  overflow: hidden;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.switch {
+  background-color: white;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: var(--rounded-full);
+
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  translate: -50% -50%;
+
+  transition: all 0.4s;
+}
+
+.switch.active {
+  left: 75%;
+}
+
+.label {
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.input {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}

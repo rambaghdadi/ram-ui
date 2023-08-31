@@ -27,7 +27,7 @@ const SelectWithState = () => {
     <div style={{minHeight: "40vh"}}>
       <Select
         isLocalSearch={true}
-        // onInputChange={(data) => setValue(data)}
+        // onInputChange={(data) => console.log(data)}
         // debounceSearch
         // debounceTimeInMs={500}
         //Change above when necessary
