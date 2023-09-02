@@ -75,8 +75,7 @@ export default App
 //INPUTS
 //TODO Number Input
 //TODO Password Input
-//TODO Checkbox
-//TODO Chip
+//TODO Email Input
 //TODO Color Picker
 //TODO Multi Select
 //TODO Pin Input

@@ -22,6 +22,7 @@ export default function TextInput({
           {placeholder}
         </label>
         <input
+          type="text"
           aria-invalid={!!error}
           placeholder=" "
           className={`${classes.input} ${errorCls} ${disabledCls}`}
