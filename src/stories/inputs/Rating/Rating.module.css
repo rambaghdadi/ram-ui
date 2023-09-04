@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-0);
+}
+
+.icon {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.icon:hover {
+  scale: 1.2;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
