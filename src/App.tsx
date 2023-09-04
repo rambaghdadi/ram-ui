@@ -68,16 +68,3 @@ function App() {
 }
 
 export default App
-
-//Display
-//TODO Carousel
-
-//INPUTS
-//TODO Number Input
-//TODO Password Input
-//TODO Email Input
-//TODO Color Picker
-//TODO Multi Select
-//TODO Pin Input
-//TODO Radio Input
-//TODO Rating Input

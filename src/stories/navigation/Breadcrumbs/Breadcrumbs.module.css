@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: var(--gap-2);
+}
+
+.container a {
+  font-weight: 500;
+  color: var(--bg-blue-600);
+}
+
+.container a:visited {
+  color: var(--bg-blue-800);
+}
