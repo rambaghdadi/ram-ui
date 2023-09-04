@@ -8,7 +8,6 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 }
 
 export default meta
@@ -42,6 +41,8 @@ export const Red: Story = {
   args: {
     ...props,
     color: "red",
+    id: "checkboxRed",
+    name: "checkboxRedName",
   },
 }
 export const Required: Story = {
@@ -49,6 +50,8 @@ export const Required: Story = {
   args: {
     ...props,
     required: true,
+    id: "checkboxReq",
+    name: "checkboxReqName",
   },
 }
 export const WithError: Story = {
@@ -56,6 +59,8 @@ export const WithError: Story = {
   args: {
     ...props,
     error: "Must consent to the terms & conditions",
+    id: "checkboxErr",
+    name: "checkboxErrName",
   },
 }
 export const Disabled: Story = {
@@ -63,5 +68,7 @@ export const Disabled: Story = {
   args: {
     ...props,
     disabled: true,
+    id: "checkboxDisabled",
+    name: "checkboxDisabledName",
   },
 }

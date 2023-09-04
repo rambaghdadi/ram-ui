@@ -41,7 +41,11 @@ export default function Checkbox({
             onChange={onChange}
             disabled={disabled}
           />
-          {checked && <TickIcon className={classes.icon} />}
+          <TickIcon
+            isActive={checked}
+            className={classes.icon}
+            id={`${id}-icon`}
+          />
         </div>
         <label className={classes.label} htmlFor={id}>
           {required && <span>* </span>}

@@ -35,6 +35,9 @@
   z-index: 1;
 }
 
+.input[type="checkbox"] {
+  transition: background 0.2s 0s;
+}
 .input[type="checkbox"]:checked {
   background-color: var(--bg);
 }
@@ -47,9 +50,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  transition-property: opacity, transform;
-  transition-timing-function: ease;
-  transition-duration: 100ms;
   pointer-events: none;
   width: 60%;
   z-index: 2;
