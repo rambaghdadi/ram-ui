@@ -32,6 +32,7 @@ export default function Tooltip({
   isActive = false,
   visibleOnHover = true,
   followMouse = false,
+  isFullWidth = false,
 }: ITooltipProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
@@ -87,7 +88,16 @@ export default function Tooltip({
         createPortal(
           <div
             ref={setPopperElement}
-            style={{...styles.popper, ...tooltipStyles}}
+            style={{
+              ...styles.popper,
+              ...tooltipStyles,
+              width: isFullWidth
+                ? referenceElement?.getBoundingClientRect().width
+                : "max-content",
+              maxWidth: isFullWidth
+                ? referenceElement?.getBoundingClientRect().width
+                : "var(--w-64)",
+            }}
             {...attributes.popper}
             className={`${classes.tooltip}`}
             id="tooltip"

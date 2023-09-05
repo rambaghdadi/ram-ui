@@ -86,6 +86,23 @@ export const colors = {
       hover: "var(--bg-orange-400)",
     },
   },
+  gray: {
+    filled: {
+      background: "var(--bg-gray-600)",
+      hover: "var(--bg-gray-700)",
+      font: "var(--bg-white)",
+    },
+    outline: {
+      background: "var(--bg-white)",
+      font: "var(--bg-gray-600)",
+      hover: "var(--bg-gray-200)",
+    },
+    light: {
+      background: "var(--bg-gray-200)",
+      font: "var(--bg-gray-600)",
+      hover: "var(--bg-gray-300)",
+    },
+  },
 } as const
 
 export const sizes = {

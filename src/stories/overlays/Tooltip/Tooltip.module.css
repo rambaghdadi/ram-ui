@@ -4,9 +4,6 @@
   border-radius: var(--rounded);
   box-shadow: var(--shadow-2xl);
   padding: var(--p-2);
-
-  width: max-content;
-  max-width: var(--w-64);
 }
 
 #arrow,

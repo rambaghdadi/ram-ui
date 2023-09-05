@@ -5,8 +5,8 @@ export const sizes = {
   sm: {
     padding: "var(--p-1)",
     fontSize: "var(--text-sm)",
-    width: "var(--w-5)",
-    height: "var(--w-5)",
+    width: "var(--w-4)",
+    height: "var(--w-4)",
   },
   md: {
     padding: "var(--p-1)",

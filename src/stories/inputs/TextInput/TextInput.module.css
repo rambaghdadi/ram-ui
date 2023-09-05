@@ -17,7 +17,7 @@
 .input {
   border-radius: var(--rounded);
   border: 1px solid var(--bg-gray-300);
-  padding: var(--p-4);
+  padding: var(--p-3) var(--p-4);
   font-size: var(--text-base);
   z-index: 1;
   box-shadow: none !important;
