@@ -1,34 +1,41 @@
 .container {
   margin-top: var(--m-3);
   position: relative;
+
+  border-radius: var(--rounded);
+  border: 1px solid var(--bg-gray-300);
+  box-shadow: none !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--p-3) var(--p-4);
+  gap: var(--gap-2);
 }
 
-.label {
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-  visibility: hidden;
+.container:has(.input:focus) {
+  outline: 1px solid var(--bg-blue-500);
 }
 
+.container:has(.input.disabled),
 .input.disabled {
   background-color: var(--bg-gray-100);
 }
 
 .input {
-  border-radius: var(--rounded);
-  border: 1px solid var(--bg-gray-300);
-  padding: var(--p-3) var(--p-4);
   font-size: var(--text-base);
   z-index: 1;
-  box-shadow: none !important;
+  outline: none;
+  border: none;
+  flex-grow: 1;
 }
 
-.input:focus {
-  outline: 1px solid var(--bg-blue-500);
-}
-
-.input.error {
+.container:has(.input.error) {
   border: 1px solid var(--bg-red-600);
+}
+
+.container:has(.input.error:focus) {
+  outline: 1px solid var(--bg-red-500);
 }
 
 .input[type="text"] {
@@ -44,7 +51,7 @@
   user-select: none;
   pointer-events: none;
 
-  z-index: 0;
+  z-index: 2;
 
   transition: top 0.2s;
 }
@@ -69,4 +76,11 @@
 .errorMessage {
   margin-top: var(--m-3);
   color: var(--bg-red-600);
+}
+
+.label {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
 }
