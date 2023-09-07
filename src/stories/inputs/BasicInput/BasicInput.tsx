@@ -11,6 +11,7 @@ export default function BasicInput({
   name,
   id,
   additionalChildren,
+  icon,
   ...props
 }: IBasicInputProps) {
   const errorCls = !!error ? classes.error : ""
@@ -20,6 +21,7 @@ export default function BasicInput({
   return (
     <>
       <div className={`${classes.container}`}>
+        {icon && <div className={classes.icon}>{icon}</div>}
         <label className={classes.label} htmlFor={id}>
           {placeholder}
         </label>

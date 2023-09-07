@@ -7,6 +7,7 @@ import ActionIcon from "../../buttons/ActionIcon/ActionIcon"
 import Tooltip from "../../overlays/Tooltip/Tooltip"
 import PasswordStrength from "./components/PasswordStrength/PasswordStrength"
 import BasicInput from "../BasicInput/BasicInput"
+import LockIcon from "./SVGs/LockIcon"
 
 export default function PasswordInput({
   passwordDetails = "Password must include at least one letter, number and special character",
@@ -54,6 +55,7 @@ export default function PasswordInput({
     >
       <BasicInput
         {...props}
+        icon={<LockIcon />}
         type={isPasswordType ? "password" : "text"}
         onBlur={() => setIsFocused(false)}
         onFocus={() => setIsFocused(true)}
