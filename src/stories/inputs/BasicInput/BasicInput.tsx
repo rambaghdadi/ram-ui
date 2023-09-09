@@ -12,6 +12,7 @@ export default function BasicInput({
   id,
   additionalChildren,
   icon,
+  className,
   ...props
 }: IBasicInputProps) {
   const errorCls = !!error ? classes.error : ""
@@ -20,23 +21,25 @@ export default function BasicInput({
 
   return (
     <>
-      <div className={`${classes.container}`}>
-        {icon && <div className={classes.icon}>{icon}</div>}
-        <label className={classes.label} htmlFor={id}>
-          {placeholder}
-        </label>
-        <input
-          aria-describedby={error ? errorId : undefined}
-          aria-invalid={!!error}
-          placeholder=" "
-          className={`${classes.input} ${errorCls} ${disabledCls}`}
-          {...{...props, value, onChange, required, disabled, name, id}}
-        />
-        <p className={`${classes.placeholder} ${errorCls}`}>
-          {(error && "Invalid Input") ||
-            (disabled && "Disabled") ||
-            (!!required ? `${placeholder} *` : placeholder)}
-        </p>
+      <div className={classes.outerContainer}>
+        <div className={`${className} ${classes.container}`}>
+          {icon && <div className={classes.icon}>{icon}</div>}
+          <label className={classes.label} htmlFor={id}>
+            {placeholder}
+          </label>
+          <input
+            aria-describedby={error ? errorId : undefined}
+            aria-invalid={!!error}
+            placeholder=" "
+            className={`${classes.input} ${errorCls} ${disabledCls}`}
+            {...{...props, value, onChange, required, disabled, name, id}}
+          />
+          <p className={`${classes.placeholder} ${errorCls}`}>
+            {(error && "Invalid Input") ||
+              (disabled && "Disabled") ||
+              (!!required ? `${placeholder} *` : placeholder)}
+          </p>
+        </div>
         {additionalChildren}
       </div>
       {!!error && (
