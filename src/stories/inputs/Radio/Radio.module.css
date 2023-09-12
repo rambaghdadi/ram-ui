@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+}
+
+.radioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-2);
+}
+
+.input[type="radio"] {
+  display: none;
+}
+
+.toggle {
+  width: var(--w-5);
+  height: var(--w-5);
+  background-color: var(--bg-gray-200);
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--bg-gray-100);
+  position: relative;
+}
+
+.toggle.selected {
+  background-color: var(--bg-blue-600);
+}
+
+.toggle::after {
+  position: absolute;
+  content: "";
+  width: var(--w-2);
+  height: var(--w-2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--rounded-full);
+}
+
+.toggle.selected::after {
+  background-color: var(--bg-white);
+}
+
+.radioContainer.disabled {
+  pointer-events: none;
+}
+
+.radioContainer.disabled .toggle {
+  background-color: var(--bg-gray-200);
+}
+.radioContainer.disabled label {
+  color: var(--bg-gray-400);
+}
