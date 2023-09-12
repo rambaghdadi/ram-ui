@@ -62,6 +62,7 @@ export default function PasswordInput({
         onChange={onChangeHandler}
         additionalChildren={
           <ActionIcon
+            style={{marginRight: `var(--m-4)`}}
             variant="light"
             color="gray"
             size="sm"
