@@ -39,11 +39,23 @@ export const Default: Story = {
   ...RadioTemplate,
   args: {},
 }
+export const Green: Story = {
+  ...RadioTemplate,
+  args: {
+    color: "green",
+  },
+}
 
 export const Disabled: Story = {
   ...RadioTemplate,
   args: {
     disabled: true,
     value: "na",
+  },
+}
+export const Required: Story = {
+  ...RadioTemplate,
+  args: {
+    required: true,
   },
 }

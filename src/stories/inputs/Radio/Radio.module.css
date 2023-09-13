@@ -4,10 +4,15 @@
   gap: var(--gap-3);
 }
 
+.legend span {
+  color: var(--bg-red-600);
+}
+
 .radioContainer {
   display: flex;
   flex-direction: column;
   gap: var(--gap-3);
+  position: relative;
 }
 
 .inputContainer {
@@ -27,25 +32,26 @@
   border-radius: var(--rounded-full);
   border: 1px solid var(--bg-gray-100);
   position: relative;
+  cursor: pointer;
 }
 
 .toggle.selected {
-  background-color: var(--bg-blue-600);
+  background-color: var(--bg);
+  transition: background-color 0.3s;
 }
 
-.toggle::after {
-  position: absolute;
-  content: "";
-  width: var(--w-2);
-  height: var(--w-2);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.chip {
+  width: var(--w-3);
+  height: var(--w-3);
   border-radius: var(--rounded-full);
-}
 
-.toggle.selected::after {
+  left: 4px;
+  position: absolute;
   background-color: var(--bg-white);
+  border: 2px solid var(--bg-gray-100);
+  z-index: 2;
+
+  transition: top 0.3s;
 }
 
 .radioContainer.disabled {
