@@ -1,8 +1,8 @@
-import Backdrop from "../components/Backdrop/Backdrop"
-import X from "../SVGs/X"
+import Backdrop from "../Backdrop/Backdrop"
 import classes from "./Modal.module.css"
 import {IModalProps} from "./Modal.types"
 import {useEffect, useRef} from "react"
+import X from "./SVGs/X"
 
 export default function Modal({
   withHeader = true,

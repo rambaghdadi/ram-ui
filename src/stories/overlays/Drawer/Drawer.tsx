@@ -1,9 +1,9 @@
 import {CSSProperties, useEffect} from "react"
-import X from "../SVGs/X"
-import Backdrop from "../components/Backdrop/Backdrop"
+import Backdrop from "../Backdrop/Backdrop"
 import classes from "./Drawer.module.css"
 import {IDrawerProps} from "./Drawer.types"
 import useMediaQuery from "../../../hooks/useMediaQuery"
+import X from "./SVGs/X"
 
 export default function Drawer({
   isVisible,
