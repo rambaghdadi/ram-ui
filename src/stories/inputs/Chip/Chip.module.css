@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-2);
+  align-items: center;
+}
+
+.chip {
+  border: 1px solid var(--bg-dark);
+  padding: var(--p-1) var(--p-3);
+  border-radius: var(--rounded-2xl);
+  min-width: var(--w-28);
+
+  cursor: pointer;
+
+  display: flex;
+  gap: var(--gap-2);
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s;
+}
+
+.chip.selected {
+  border: 2px solid var(--bg);
+}
+
+.chip.disabled {
+  background-color: var(--bg-gray-100);
+  color: var(--bg-gray-400);
+  border: 1px solid var(--bg-gray-400);
+  pointer-events: none;
+}
+
+.chip p {
+  font-weight: 500;
+}
+
+.tickIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--bg);
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
